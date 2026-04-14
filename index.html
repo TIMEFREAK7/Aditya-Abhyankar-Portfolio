@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Aditya Abhyankar - Mechanical Engineer & Project Manager</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Aditya Abhyankar, Mechanical Engineer and Technical Project Manager with 8+ years of experience.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #60a5fa, var(--accent));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+        }
+
+        :root {
+            --bg: #eff5fb;
+            --surface: rgba(255, 255, 255, 0.92);
+            --surface-strong: rgba(255, 255, 255, 0.98);
+            --text: #0f172a;
+            --muted: #475569;
+            --border: rgba(148, 163, 184, 0.22);
+            --accent: #2563eb;
+            --accent-soft: rgba(59, 130, 246, 0.16);
+            --accent-strong: #1d4ed8;
+            --header-bg: rgba(15, 23, 42, 0.9);
+            --card-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            --button-bg: #2563eb;
+            --button-hover: #1d4ed8;
+            --hero-bg1: rgba(37, 99, 235, 0.16);
+            --hero-bg2: #eff5fb;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(180deg, #eff5fb 0%, var(--bg) 45%, #f8fafc 100%);
+            min-height: 100vh;
+        }
+
+        body.dark-mode {
+            --bg: #0c1727;
+            --surface: rgba(15, 23, 42, 0.78);
+            --surface-strong: rgba(15, 23, 42, 0.92);
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --border: rgba(148, 163, 184, 0.16);
+            --accent: #60a5fa;
+            --accent-soft: rgba(96, 165, 250, 0.16);
+            --accent-strong: #38bdf8;
+            --header-bg: rgba(15, 23, 42, 0.95);
+            --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+            --button-bg: #3b82f6;
+            --button-hover: #2563eb;
+            --hero-bg1: rgba(37, 99, 235, 0.22);
+            --hero-bg2: #0f172a;
+            background: linear-gradient(180deg, #08101f 0%, #0c1727 45%, #111827 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--header-bg);
+            color: white;
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+            backdrop-filter: blur(14px);
+            transition: transform 0.3s ease, background 0.3s ease, padding 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+        }
+
+        .nav-link {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.25s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active-link {
+            color: var(--accent);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active-link::after {
+            width: 100%;
+        }
+
+        .header .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+            font-size: 1rem;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 140px 0 90px;
+            overflow: hidden;
+            background: radial-gradient(circle at top center, var(--hero-bg1), transparent 32%),
+                        linear-gradient(135deg, var(--hero-bg2) 0%, var(--bg) 100%);
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at bottom right, var(--hero-bg1), transparent 30%),
+                        radial-gradient(circle at top left, var(--hero-bg1), transparent 20%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            animation: fadeInUp 0.9s ease both;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.05;
+            text-shadow: 0 16px 40px rgba(160, 174, 192, 0.12);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 3rem;
+            line-height: 1.75;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 18px;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Skill Bars */
+        .skill-bar-container {
+            margin-top: 1.5rem;
+        }
+
+        .skill-bar-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-bar-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--border);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #60a5fa);
+            width: 0%;
+            transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-radius: 9999px;
+            box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+        }
+
+        .skill-bar-fill.animated {
+            width: var(--width);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 26px 50px rgba(37, 99, 235, 0.18);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(40px);
+            visibility: hidden;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.section-alt {
+            background: var(--surface-strong);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .skill-card,
+        .experience-item,
+        .education-item,
+        .contact-item,
+        .stat-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .skill-card.visible,
+        .experience-item.visible,
+        .education-item.visible,
+        .contact-item.visible,
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title,
+        .section-subtitle {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--surface-strong);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 30px 70px rgba(66, 153, 225, 0.18);
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            transition: transform 0.4s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-6px);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            display: block;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 55px rgba(15, 23, 42, 0.14);
+        }
+
+        .skill-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Staggered Card Animations */
+        .skill-card:nth-child(1) { transition: all 0.6s ease 0s; }
+        .skill-card:nth-child(2) { transition: all 0.6s ease 0.1s; }
+        .skill-card:nth-child(3) { transition: all 0.6s ease 0.2s; }
+        .skill-card:nth-child(4) { transition: all 0.6s ease 0.3s; }
+
+        .experience-item:nth-child(2) { transition: all 0.6s ease 0s; }
+        .experience-item:nth-child(3) { transition: all 0.6s ease 0.1s; }
+        .experience-item:nth-child(4) { transition: all 0.6s ease 0.2s; }
+        .experience-item:nth-child(5) { transition: all 0.6s ease 0.3s; }
+
+        .education-item:nth-child(1) { transition: all 0.6s ease 0s; }
+        .education-item:nth-child(2) { transition: all 0.6s ease 0.2s; }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 55px rgba(15, 23, 42, 0.14);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .company-details {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: var(--surface);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .company-logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            display: block;
+        }
+
+        body.dark-mode .company-logo {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .experience-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .experience-company {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-description {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .experience-achievements {
+            list-style: none;
+        }
+
+        .experience-achievements li {
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-achievements li::before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .project-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-item {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 50px rgba(15, 23, 42, 0.14);
+        }
+
+        .education-degree {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-institution {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-year {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-description {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(14px);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 60px rgba(0, 0, 0, 0.14);
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .contact-value a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--button-bg);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 16px 30px rgba(66, 153, 225, 0.18);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(66, 153, 225, 0.22);
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(99, 179, 237, 0.8);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(99, 179, 237, 0.14);
+            color: white;
+        }
+
+        .btn-secondary:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #a0aec0;
+            padding: 3rem 0 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 1rem 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+                margin: 0.25rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Aditya Abhyankar</div>
+                <div class="nav-actions">
+                    <nav class="nav-links">
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <a href="#experience" class="nav-link">Experience</a>
+                        <a href="#education" class="nav-link">Education</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </nav>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Aditya Abhyankar</h1>
+                <p class="hero-subtitle">Mechanical Engineer & Technical Project Manager</p>
+                <p class="hero-description">
+                    Results-driven professional with 8+ years of experience in project planning, technical project management,
+                    and delivery across industrial construction, manufacturing, and engineering sectors.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">£90M+</div>
+                        <div class="stat-label">Project Value Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Milestone Compliance</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Major Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Professional Overview</h3>
+                    <p>
+                        I am a dedicated Mechanical Engineer and Technical Project Manager with extensive experience
+                        in managing complex projects across multiple industries. My expertise spans project planning,
+                        stakeholder management, and technical implementation.
+                    </p>
+                    <p>
+                        Throughout my career, I have successfully delivered projects worth over £90 million,
+                        consistently achieving 98% milestone compliance and driving operational efficiencies
+                        through strategic planning and execution.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="profile-image">
+                        <img src="/profile/profile.jpeg" alt="Profile photo of Aditya Abhyankar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">
+                Technical and professional skills developed through years of hands-on experience
+            </p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3 class="skill-title">Project Management</h3>
+                    <ul class="skill-list">
+                        <li>Primavera P6 & Microsoft Project</li>
+                        <li>3-Tier Scheduling Methodology</li>
+                        <li>Risk Management & Mitigation</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                    <div class="skill-bar-container">
+                        <span class="skill-bar-label">Proficiency</span>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Technical Engineering</h3>
+                    <ul class="skill-list">
+                        <li>AutoCAD & SolidWorks</li>
+                        <li>Pro/ENGINEER (Creo)</li>
+                        <li>ANSYS Simulation</li>
+                        <li>Technical Documentation</li>
+                    </ul>
+                    <div class="skill-bar-container">
+                        <span class="skill-bar-label">Proficiency</span>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Business Systems</h3>
+                    <ul class="skill-list">
+                        <li>ERP Implementation</li>
+                        <li>Process Optimization</li>
+                        <li>KPI Dashboard Development</li>
+                        <li>Data Analysis & Reporting</li>
+                    </ul>
+                    <div class="skill-bar-container">
+                        <span class="skill-bar-label">Proficiency</span>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="88%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-title">Industry Knowledge</h3>
+                    <ul class="skill-list">
+                        <li>CAPEX Project Delivery</li>
+                        <li>Manufacturing Operations</li>
+                        <li>Quality Management Systems</li>
+                        <li>Regulatory Compliance</li>
+                    </ul>
+                    <div class="skill-bar-container">
+                        <span class="skill-bar-label">Proficiency</span>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">
+                A track record of successful project delivery and operational excellence
+            </p>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-details">
+                        <div class="company-logo">
+                            <img src="logos/pepsico.webp" alt="PepsiCo logo">
+                        </div>
+                        <div>
+                            <h3 class="experience-title">Project Planner / Planning Engineer</h3>
+                            <div class="experience-company">Facilities And Building Solutions (FABS) – PEPSICO India</div>
+                        </div>
+                    </div>
+                    <div class="experience-date">Oct 2025 – Present</div>
+                </div>
+                <p class="experience-description">
+                    Leading planning and scheduling for major beverage manufacturing facility projects in live production environments.
+                </p>
+                <ul class="experience-achievements">
+                    <li>Achieved 98% milestone compliance across 30+ work packages</li>
+                    <li>Reduced workfront conflicts by 30% through coordinated planning</li>
+                    <li>Implemented standardized dashboards improving reporting efficiency by 40%</li>
+                    <li>Maintained 100% document control compliance for 300+ technical drawings</li>
+                </ul>
+                <div class="project-images">
+                    <img src="projects/pepsico1.JPG" alt="PepsiCo project 1">
+                    <img src="projects/pepsico2.JPG" alt="PepsiCo project 2">
+                    <img src="projects/pepsico3.JPG" alt="PepsiCo project 3">
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-details">
+                        <div class="company-logo">
+                            <img src="logos/revolution-zero.png" alt="Revolution-ZERO logo">
+                        </div>
+                        <div>
+                            <h3 class="experience-title">Technical Project Manager</h3>
+                            <div class="experience-company">Revolution-ZERO | UK</div>
+                        </div>
+                    </div>
+                    <div class="experience-date">Nov 2024 – Jul 2025</div>
+                </div>
+                <p class="experience-description">
+                    Managed £3M+ sterilization plant projects across UK facilities, ensuring technical compliance and regulatory standards.
+                </p>
+                <ul class="experience-achievements">
+                    <li>Led end-to-end delivery of 2+ large-scale CAPEX projects</li>
+                    <li>Coordinated AutoCAD technical drawings and design implementation</li>
+                    <li>Established comprehensive KPIs, risk registers, and project governance</li>
+                    <li>Ensured regulatory compliance in technically sensitive environments</li>
+                </ul>
+                <div class="project-images">
+                    <img src="projects/revolution-zero1.avif" alt="Revolution-ZERO project 1">
+                    <img src="projects/revolution-zero2.png" alt="Revolution-ZERO project 2">
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-details">
+                        <div class="company-logo">
+                            <img src="logos/nhs.webp" alt="NHS Business Services Authority logo">
+                        </div>
+                        <div>
+                            <h3 class="experience-title">IT Service Desk Analyst</h3>
+                            <div class="experience-company">NHS Business Services Authority | UK</div>
+                        </div>
+                    </div>
+                    <div class="experience-date">Jun 2023 – Jul 2023</div>
+                </div>
+                <p class="experience-description">
+                    Provided technical support during large-scale infrastructure migration projects.
+                </p>
+                <ul class="experience-achievements">
+                    <li>Achieved 95% issue resolution rate during email migration</li>
+                    <li>Managed Azure, Exchange, Microsoft 365, and SCCM support</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-details">
+                        <div class="company-logo">
+                            <img src="logos/northumbria.webp" alt="Northumbria University logo">
+                        </div>
+                        <div>
+                            <h3 class="experience-title">Senior Student Inclusion Consultant</h3>
+                            <div class="experience-company">Northumbria University | UK</div>
+                        </div>
+                    </div>
+                    <div class="experience-date">Aug 2022 – Jul 2023</div>
+                </div>
+                <p class="experience-description">
+                    Supported the development and delivery of Diversity & Inclusion initiatives across university programmes and stakeholder groups.
+                </p>
+                <ul class="experience-achievements">
+                    <li>Supported development and implementation of D&I initiatives for student programmes and stakeholders</li>
+                    <li>Contributed to institutional projects that improved student satisfaction outcomes by 20%</li>
+                    <li>Collaborated with university stakeholders to improve communication, engagement, and inclusion practices</li>
+                    <li>Supported planning, coordination, and delivery of strategic student-focused initiatives and events</li>
+                </ul>
+                <div class="project-images">
+                    <img src="projects/northumbria1.jpg" alt="Northumbria project 1">
+                    <img src="projects/northumbria2.jpg" alt="Northumbria project 2">
+                    <img src="projects/northumbria3.jpg" alt="Northumbria project 3">
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-details">
+                        <div class="company-logo">
+                            <img src="logos/gray-fox.jpg" alt="Gray Fox Consulting logo">
+                        </div>
+                        <div>
+                            <h3 class="experience-title">Project Manager – ERP Implementation</h3>
+                            <div class="experience-company">Gray Fox Consulting | UK</div>
+                        </div>
+                    </div>
+                    <div class="experience-date">Jul 2022 – Feb 2023</div>
+                </div>
+                <p class="experience-description">
+                    Led ERP system implementation and business process optimization initiatives.
+                </p>
+                <ul class="experience-achievements">
+                    <li>Delivered $100K annual savings through process improvements</li>
+                    <li>Reduced project risks by 30% through structured analysis</li>
+                    <li>Accelerated project timeline by 15% via optimized implementation roadmap</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">
+                Academic foundation supporting professional expertise
+            </p>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h3 class="education-degree">Master of Science (MSc) Project Management</h3>
+                    <div class="education-institution">Northumbria University, UK</div>
+                    <div class="education-year">2021-2023</div>
+                    <p>Grade: 2:1 (Commendation)</p>
+                    <p>Dissertation: AI in Risk Management (65%)</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="education-degree">Bachelor of Engineering (B.E.) Mechanical Engineering</h3>
+                    <div class="education-institution">Savitribai Phule Pune University, India</div>
+                    <div class="education-year">2020</div>
+                    <p>Graduated with Distinction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Let's Connect</h2>
+                <p class="contact-description">
+                    I'm always interested in discussing new opportunities and innovative projects.
+                    Feel free to reach out to discuss how we can work together.
+                </p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Pune, India</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+91 9011557131</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:Aditya.abhyankar22@gmail.com">Aditya.abhyankar22@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">
+                            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <a href="Aditya_Abhyankar_CV.pdf" download class="btn">📥 Download CV</a>
+                    <a href="mailto:Aditya.abhyankar22@gmail.com" class="btn">Send Message</a>
+                    <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:Aditya.abhyankar22@gmail.com">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank">LinkedIn</a></li>
+                        <li><a href="tel:+919011557131">Phone</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <ul>
+                        <li><p>Pune, India</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aditya Abhyankar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Progress Bar
+        const scrollProgress = document.createElement('div');
+        scrollProgress.className = 'scroll-progress';
+        document.body.prepend(scrollProgress);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        const header = document.querySelector('.header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        const setTheme = (mode) => {
+            if (mode === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '☀️';
+                themeToggle.setAttribute('aria-label', 'Switch to light mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggle.textContent = '🌙';
+                themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+            }
+            localStorage.setItem('portfolio-theme', mode);
+        };
+
+        const initTheme = () => {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark' || savedTheme === 'light') {
+                setTheme(savedTheme);
+            } else {
+                setTheme(prefersDark ? 'dark' : 'light');
+            }
+        };
+
+        initTheme();
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
+        });
+
+        const smoothScroll = (targetId) => {
+            const targetSection = document.querySelector(targetId);
+            const headerHeight = header.offsetHeight;
+            if (!targetSection) return;
+            window.scrollTo({
+                top: targetSection.offsetTop - headerHeight + 4,
+                behavior: 'smooth'
+            });
+        };
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                smoothScroll(this.getAttribute('href'));
+            });
+        });
+
+        const revealItems = document.querySelectorAll('.section, .skill-card, .experience-item, .education-item, .contact-item, .stat-item');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.18
+        });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+
+        const highlightCurrentLink = () => {
+            let closestLink = null;
+            let closestDistance = Number.POSITIVE_INFINITY;
+            const offset = header.offsetHeight + 20;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const distance = Math.abs(rect.top - offset);
+                const link = document.querySelector(`.nav-link[href="#${section.getAttribute('id')}"]`);
+                if (!link) return;
+
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestLink = link;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle('active-link', link === closestLink);
+            });
+        };
+
+        const handleScroll = () => {
+            if (window.scrollY > 70) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            highlightCurrentLink();
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', () => {
+            handleScroll();
+            revealItems.forEach(item => {
+                if (item.getBoundingClientRect().top < window.innerHeight) {
+                    item.classList.add('visible');
+                }
+            });
+
+            // Animated Stat Counters
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        const element = entry.target;
+                        const targetText = element.textContent;
+                        const numMatch = targetText.match(/\d+/);
+                        
+                        if (numMatch) {
+                            const targetNumber = parseInt(numMatch[0]);
+                            const prefix = targetText.substring(0, targetText.indexOf(numMatch[0]));
+                            const suffix = targetText.substring(targetText.indexOf(numMatch[0]) + numMatch[0].length);
+                            const duration = 1500;
+                            const startTime = Date.now();
+
+                            const counter = () => {
+                                const elapsed = Date.now() - startTime;
+                                const progress = Math.min(elapsed / duration, 1);
+                                const easeOut = 1 - Math.pow(1 - progress, 3);
+                                const currentNumber = Math.floor(easeOut * targetNumber);
+                                element.textContent = prefix + currentNumber + suffix;
+
+                                if (progress < 1) {
+                                    requestAnimationFrame(counter);
+                                } else {
+                                    element.textContent = targetText;
+                                    element.classList.add('counted');
+                                }
+                            };
+                            counter();
+                        }
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
+
+            statNumbers.forEach(num => counterObserver.observe(num));
+
+            // Skill Progress Bars Animation
+            const skillBars = document.querySelectorAll('.skill-bar-fill');
+            
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                if (width) {
+                    bar.style.setProperty('--width', width);
+                }
+            });
+
+            const barObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        barObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            skillBars.forEach(bar => barObserver.observe(bar));
+        });
+    </script>
+</body>
+</html>
