@@ -5,23 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Aditya Abhyankar - Let's Connect</title>
   <meta name="description" content="Get in touch with Aditya Abhyankar for project management, engineering, and technical leadership opportunities across UK and India.">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="logo">
-        <span class="logo-dot"></span>
-        Aditya Abhyankar
-      </a>
-
+      <a href="index.html" class="logo"><span class="logo-dot"></span> Aditya Abhyankar</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="experience.html">Experience</a></li>
@@ -29,21 +22,14 @@
         <li><a href="skills.html">Competencies</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-
-      <a href="contact.html" class="nav-cta">
-        <i class="fas fa-paper-plane"></i>
-        Hire Me
-      </a>
-
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- Page Header -->
   <section class="hero" style="min-height: 50vh; padding-top: 100px;">
     <div class="hero-bg"></div>
     <div class="container">
@@ -57,70 +43,35 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
       <div class="contact-grid">
-
-        <!-- Contact Info -->
         <div class="contact-info">
           <div class="contact-card reveal stagger-1">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>Email</h4>
-              <a href="mailto:Aditya.abhyankar22@gmail.com">Aditya.abhyankar22@gmail.com</a>
-            </div>
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail"><h4>Email</h4><a href="mailto:Aditya.abhyankar22@gmail.com">Aditya.abhyankar22@gmail.com</a></div>
           </div>
-
           <div class="contact-card reveal stagger-2">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>Phone</h4>
-              <a href="tel:+919011557131">+91 90115 57131</a>
-            </div>
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-detail"><h4>Phone</h4><a href="tel:+919011557131">+91 90115 57131</a></div>
           </div>
-
           <div class="contact-card reveal stagger-3">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>Location</h4>
-              <p>Pune, India</p>
-            </div>
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-detail"><h4>Location</h4><p>Pune, India</p></div>
           </div>
-
           <div class="contact-card reveal stagger-4">
-            <div class="contact-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>LinkedIn</h4>
-              <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank">linkedin.com/in/aditya-abhyankar-249370194</a>
-            </div>
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="contact-detail"><h4>LinkedIn</h4><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank">linkedin.com/in/aditya-abhyankar-249370194</a></div>
           </div>
-
           <div class="contact-card reveal stagger-5">
-            <div class="contact-icon">
-              <i class="fas fa-file-alt"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>CV / Resume</h4>
-              <a href="Aditya_Abhyankar_CV.pdf" target="_blank">Download PDF Version</a>
-            </div>
+            <div class="contact-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="contact-detail"><h4>CV / Resume</h4><a href="Aditya_Abhyankar_CV.pdf" target="_blank">Download PDF Version</a></div>
           </div>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact-form-wrapper reveal">
-          <h3 style="margin-bottom: var(--space-md);">Send a Message</h3>
-
+          <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
           <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="e556db48-9042-4daa-9ee9-b294963e883f">
             <input type="hidden" name="subject" value="New Portfolio Contact Message">
             <input type="hidden" name="from_name" value="Portfolio Contact Form">
@@ -136,6 +87,19 @@
             </div>
 
             <div class="form-group">
+              <label for="reason" class="form-label">Reason for Contact</label>
+              <select id="reason" name="reason" class="form-select" required>
+                <option value="" disabled selected>Select a reason...</option>
+                <option value="job-opportunity">Job Opportunity / Full-Time Role</option>
+                <option value="contract-project">Contract / Project Work</option>
+                <option value="consulting">Consulting / Advisory</option>
+                <option value="collaboration">Collaboration / Partnership</option>
+                <option value="networking">Networking / General Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label for="subject_field" class="form-label">Subject</label>
               <input type="text" id="subject_field" name="subject_field" class="form-input" placeholder="Project Opportunity / Collaboration / Inquiry" required>
             </div>
@@ -145,12 +109,10 @@
               <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about the opportunity, project details, or how you'd like to connect..." required></textarea>
             </div>
 
-            <!-- Honeypot field to prevent spam -->
             <input type="checkbox" name="botcheck" style="display: none;">
 
             <button type="submit" class="btn btn-primary form-submit">
-              <i class="fas fa-paper-plane"></i>
-              Send Message
+              <i class="fas fa-paper-plane"></i> Send Message
             </button>
 
             <div id="formStatus" class="form-status"></div>
@@ -160,27 +122,20 @@
     </div>
   </section>
 
-  <!-- Map / Location Visual -->
   <section class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Availability</span>
         <h2>Current Status</h2>
       </div>
-
       <div class="competencies-grid" style="max-width: 800px; margin: 0 auto;">
         <div class="card reveal stagger-1 text-center">
-          <div class="card-icon" style="background: #d1fae5; color: #059669;">
-            <i class="fas fa-check-circle"></i>
-          </div>
+          <div class="card-icon" style="background: #d1fae5; color: #059669;"><i class="fas fa-check-circle"></i></div>
           <h4>Open to Opportunities</h4>
           <p>Currently based in Pune, India and actively seeking project management and technical leadership roles across industrial, manufacturing, and infrastructure sectors.</p>
         </div>
-
         <div class="card reveal stagger-2 text-center">
-          <div class="card-icon" style="background: #e0e7ff; color: #4f46e5;">
-            <i class="fas fa-globe"></i>
-          </div>
+          <div class="card-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-globe"></i></div>
           <h4>Flexible Location</h4>
           <p>Experienced working across UK and India. Open to relocation, hybrid, and remote opportunities depending on role requirements.</p>
         </div>
@@ -188,7 +143,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -196,15 +150,10 @@
           <div class="footer-brand">Aditya Abhyankar</div>
           <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email">
-              <i class="fas fa-envelope"></i>
-            </a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-
         <div>
           <h4 class="footer-title">Quick Links</h4>
           <ul class="footer-links">
@@ -215,7 +164,6 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="footer-title">Contact</h4>
           <ul class="footer-links">
@@ -225,10 +173,7 @@
           </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p> 2026 Aditya Abhyankar. All rights reserved.</p>
-      </div>
+      <div class="footer-bottom"><p> 2026 Aditya Abhyankar. All rights reserved.</p></div>
     </div>
   </footer>
 

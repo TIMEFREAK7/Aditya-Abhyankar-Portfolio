@@ -5,26 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aditya Abhyankar | Project Manager & Mechanical Engineer</title>
   <meta name="description" content="Results-driven Mechanical Engineer and Technical Project Manager with 8+ years experience delivering £90M+ projects across industrial construction, manufacturing, and sustainability.">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
         <span class="logo-dot"></span>
         Aditya Abhyankar
       </a>
-
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="experience.html">Experience</a></li>
@@ -32,39 +25,32 @@
         <li><a href="skills.html">Competencies</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
-      <a href="contact.html" class="nav-cta">
-        <i class="fas fa-paper-plane"></i>
-        Hire Me
-      </a>
-
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <a href="contact.html" class="nav-cta">
+          <i class="fas fa-paper-plane"></i> Hire Me
+        </a>
+        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
       <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">
-            <span class="dot"></span>
-            Available for Opportunities
+            <span class="dot"></span> Available for Opportunities
           </div>
-
-          <h1>
-            Hi, I'm <span class="gradient-text">Aditya Abhyankar</span>
-          </h1>
-
+          <h1>Hi, I'm <span class="gradient-text">Aditya Abhyankar</span></h1>
           <p class="hero-subtitle">
             Technical Project Manager & Mechanical Engineer delivering £90M+ in industrial, manufacturing, and sustainability projects across the UK and India.
           </p>
-
           <div class="hero-stats">
             <div class="stat-item">
               <div class="stat-number counter" data-target="8" data-suffix="+">0</div>
@@ -79,30 +65,24 @@
               <div class="stat-label">Teams Coordinated</div>
             </div>
           </div>
-
           <div class="hero-cta">
             <a href="experience.html" class="btn btn-primary">
-              <i class="fas fa-briefcase"></i>
-              View Experience
+              <i class="fas fa-briefcase"></i> View Experience
             </a>
             <a href="Aditya_Abhyankar_CV.pdf" class="btn btn-secondary" target="_blank">
-              <i class="fas fa-download"></i>
-              Download CV
+              <i class="fas fa-download"></i> Download CV
             </a>
           </div>
         </div>
-
         <div class="hero-visual">
           <div class="profile-card">
             <div class="profile-img-wrapper">
-              <img src="https://ui-avatars.com/api/?name=Aditya+Abhyankar&background=4f46e5&color=fff&size=400&font-size=0.3" alt="Aditya Abhyankar" class="profile-img">
+              <img src="https://ui-avatars.com/api/?name=Aditya+Abhyankar&background=0d9488&color=fff&size=400&font-size=0.3" alt="Aditya Abhyankar" class="profile-img">
             </div>
-
             <div class="floating-badge badge-1">
               <div class="icon"><i class="fas fa-check-circle"></i></div>
               <span>Primavera P6 Expert</span>
             </div>
-
             <div class="floating-badge badge-2">
               <div class="icon"><i class="fas fa-award"></i></div>
               <span>MSc Project Management</span>
@@ -113,7 +93,7 @@
     </div>
   </section>
 
-  <!-- Core Competencies - PROMINENTLY PLACED -->
+  <!-- Core Competencies - PROMINENT -->
   <section class="section competencies-section">
     <div class="container">
       <div class="section-header reveal">
@@ -121,76 +101,70 @@
         <h2>Core Competencies</h2>
         <p>A blend of engineering expertise, project planning mastery, and cross-functional leadership that drives programme performance.</p>
       </div>
-
       <div class="competencies-grid">
-        <div class="competency-card reveal stagger-1">
+        <div class="competency-card reveal stagger-1" data-modal="modal-planning">
           <h4><i class="fas fa-project-diagram" style="color: var(--accent-primary);"></i> Project Planning & Controls</h4>
           <p>Primavera P6, Microsoft Project, 3-tier scheduling (L1-L3), progress monitoring, baseline tracking, and float risk identification across 30+ work packages.</p>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
-
-        <div class="competency-card reveal stagger-2">
+        <div class="competency-card reveal stagger-2" data-modal="modal-construction">
           <h4><i class="fas fa-hard-hat" style="color: var(--accent-primary);"></i> Construction & Industrial Coordination</h4>
           <p>Site execution support, contractor coordination, utility integration, and live production environment management for CAPEX industrial projects.</p>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
-
-        <div class="competency-card reveal stagger-3">
+        <div class="competency-card reveal stagger-3" data-modal="modal-reporting">
           <h4><i class="fas fa-chart-line" style="color: var(--accent-primary);"></i> Reporting & Dashboarding</h4>
           <p>KPI tracking, standardized dashboards, daily/weekly/monthly progress reports, and document control with 100% revision traceability.</p>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
-
-        <div class="competency-card reveal stagger-4">
+        <div class="competency-card reveal stagger-4" data-modal="modal-risk">
           <h4><i class="fas fa-shield-alt" style="color: var(--accent-primary);"></i> Risk & Change Management</h4>
           <p>Proactive risk identification, mitigation strategy development, structured change management, and recovery planning that saved ~3 weeks of slippage.</p>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
-
-        <div class="competency-card reveal stagger-5">
+        <div class="competency-card reveal stagger-5" data-modal="modal-stakeholder">
           <h4><i class="fas fa-users" style="color: var(--accent-primary);"></i> Stakeholder & Team Leadership</h4>
           <p>Cross-functional team coordination across 26+ teams, client relationship management, and stakeholder communication in high-compliance environments.</p>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
-
-        <div class="competency-card reveal stagger-1">
+        <div class="competency-card reveal stagger-1" data-modal="modal-engineering">
           <h4><i class="fas fa-cogs" style="color: var(--accent-primary);"></i> Engineering & Technical Tools</h4>
           <p>AutoCAD 2D coordination, mechanical engineering fundamentals, ERP implementation analysis, and technical documentation across multiple project phases.</p>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
       </div>
-
       <div class="text-center mt-4 reveal">
         <a href="skills.html" class="btn btn-primary">
-          <i class="fas fa-arrow-right"></i>
-          View All Competencies
+          <i class="fas fa-arrow-right"></i> View All Competencies
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Quick Highlights -->
+  <!-- Key Achievements -->
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Track Record</span>
         <h2>Key Achievements</h2>
       </div>
-
       <div class="competencies-grid">
-        <div class="card reveal stagger-1">
+        <div class="card reveal stagger-1" data-modal="modal-achievement-1">
           <div class="card-icon"><i class="fas fa-trophy"></i></div>
           <h4>£90M+ Project Portfolio</h4>
           <p>Contributed to and supported projects with cumulative values exceeding £90M across industrial construction, manufacturing, and technical infrastructure.</p>
         </div>
-
-        <div class="card reveal stagger-2">
+        <div class="card reveal stagger-2" data-modal="modal-achievement-2">
           <div class="card-icon"><i class="fas fa-clock"></i></div>
           <h4>98% Milestone Compliance</h4>
           <p>Achieved 98% milestone compliance over 5 months at PepsiCo facility by developing and maintaining rigorous 3-tier schedules across 30+ work packages.</p>
         </div>
-
-        <div class="card reveal stagger-3">
+        <div class="card reveal stagger-3" data-modal="modal-achievement-3">
           <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
           <h4>40% Reporting Efficiency Gain</h4>
           <p>Reduced report generation time by 40% through standardized dashboards and automated progress measurement systems covering 200+ activities.</p>
         </div>
-
-        <div class="card reveal stagger-4">
+        <div class="card reveal stagger-4" data-modal="modal-achievement-4">
           <div class="card-icon"><i class="fas fa-leaf"></i></div>
           <h4>Sustainability-Driven Delivery</h4>
           <p>Supported sustainability-driven infrastructure at PepsiCo and contributed to process improvements in sterilization plant projects across the UK.</p>
@@ -199,23 +173,21 @@
     </div>
   </section>
 
-  <!-- Education Preview -->
+  <!-- Education -->
   <section class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Academic Foundation</span>
         <h2>Education</h2>
       </div>
-
       <div class="competencies-grid">
-        <div class="card reveal stagger-1">
+        <div class="card reveal stagger-1" data-modal="modal-edu-msc">
           <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
           <h4>Master of Science (MSc), Project Management</h4>
           <p>Northumbria University, Newcastle upon Tyne, UK (2021–2023)</p>
           <p style="margin-top: 0.5rem; font-size: 0.9375rem;">Graduated with 2:1 (Commendation) • Advanced Practice Semester with Merit • Dissertation: AI in Risk Management Practices (Score: 65)</p>
         </div>
-
-        <div class="card reveal stagger-2">
+        <div class="card reveal stagger-2" data-modal="modal-edu-be">
           <div class="card-icon"><i class="fas fa-university"></i></div>
           <h4>Bachelor of Engineering (B.E.), Mechanical Engineering</h4>
           <p>Savitribai Phule Pune University, Pune, India (2020)</p>
@@ -225,22 +197,20 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="section" style="padding-bottom: var(--space-xl);">
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: 5rem;">
     <div class="container">
-      <div class="card reveal text-center" style="background: var(--accent-gradient); color: white; border: none;">
-        <h2 style="color: white; margin-bottom: var(--space-sm);">Let's Build Something Great Together</h2>
-        <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto var(--space-md);">
+      <div class="card reveal text-center" style="background: var(--accent-gradient); color: white; border: none; cursor: default;">
+        <h2 style="color: white; margin-bottom: 1rem;">Let's Build Something Great Together</h2>
+        <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 1.5rem;">
           Whether you need project planning expertise, technical coordination, or engineering leadership—I'm ready to deliver results.
         </p>
-        <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="contact.html" class="btn" style="background: white; color: var(--accent-primary);">
-            <i class="fas fa-envelope"></i>
-            Get In Touch
+            <i class="fas fa-envelope"></i> Get In Touch
           </a>
           <a href="projects.html" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3);">
-            <i class="fas fa-folder-open"></i>
-            See My Work
+            <i class="fas fa-folder-open"></i> See My Work
           </a>
         </div>
       </div>
@@ -255,15 +225,10 @@
           <div class="footer-brand">Aditya Abhyankar</div>
           <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects with precision and leadership.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email">
-              <i class="fas fa-envelope"></i>
-            </a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-
         <div>
           <h4 class="footer-title">Quick Links</h4>
           <ul class="footer-links">
@@ -274,7 +239,6 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="footer-title">Contact</h4>
           <ul class="footer-links">
@@ -284,12 +248,299 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p> 2026 Aditya Abhyankar. All rights reserved. Built with precision.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="modal-planning">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-project-diagram" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Planning & Controls</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1rem;">Deep expertise in enterprise-level project planning and controls across industrial and construction environments.</p>
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li>Primavera P6 advanced scheduling with resource loading and cost integration</li>
+          <li>Microsoft Project / Planner for agile and hybrid delivery models</li>
+          <li>3-tier scheduling architecture (L1 Master, L2 Summary, L3 Detailed)</li>
+          <li>Progress S-curve development and earned value analysis</li>
+          <li>Critical path analysis and float management</li>
+          <li>Baseline maintenance and schedule variance reporting (±5% accuracy)</li>
+          <li>Lookahead planning (daily/weekly) with subcontractor coordination</li>
+        </ul>
+        <h4>Tools & Certifications</h4>
+        <div class="modal-tags">
+          <span class="modal-tag">Primavera P6</span>
+          <span class="modal-tag">Microsoft Project</span>
+          <span class="modal-tag">Microsoft Planner</span>
+          <span class="modal-tag">Jira</span>
+          <span class="modal-tag">Asana</span>
+          <span class="modal-tag">Monday.com</span>
+          <span class="modal-tag">Trello</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-construction">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-hard-hat" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Construction & Industrial Coordination</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1rem;">Hands-on experience coordinating complex industrial construction projects within live production environments.</p>
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li>Site execution support for beverage manufacturing facilities</li>
+          <li>Utility integration (electrical, mechanical, HVAC, piping)</li>
+          <li>Subcontractor management across 20+ teams simultaneously</li>
+          <li>Workfront conflict resolution reducing delays by 30%</li>
+          <li>CAPEX project delivery from concept to commissioning</li>
+          <li>Document control for 300+ drawings with 100% traceability</li>
+          <li>Quality assurance and compliance in high-regulation environments</li>
+        </ul>
+        <h4>Sectors</h4>
+        <div class="modal-tags">
+          <span class="modal-tag">Industrial Manufacturing</span>
+          <span class="modal-tag">Beverage Production</span>
+          <span class="modal-tag">Sterilization Plants</span>
+          <span class="modal-tag">Utility Systems</span>
+          <span class="modal-tag">Infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-reporting">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-chart-line" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Reporting & Dashboarding</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1rem;">Expert in transforming raw project data into actionable insights through structured reporting and visual dashboards.</p>
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li>Daily, weekly, and monthly progress report generation</li>
+          <li>Standardized dashboard creation reducing report time by 40%</li>
+          <li>KPI tracking and performance metric visualization</li>
+          <li>Progress measurement systems covering 200+ activities</li>
+          <li>Schedule variance analysis within ±5% accuracy</li>
+          <li>Resource utilization tracking and forecasting</li>
+          <li>Executive-level presentation and stakeholder communication</li>
+        </ul>
+        <h4>Reporting Tools</h4>
+        <div class="modal-tags">
+          <span class="modal-tag">Microsoft Excel</span>
+          <span class="modal-tag">PowerPoint</span>
+          <span class="modal-tag">Power BI</span>
+          <span class="modal-tag">KPI Dashboards</span>
+          <span class="modal-tag">Data Tracking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-risk">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-shield-alt" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Risk & Change Management</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1rem;">Proactive risk management approach that identifies threats early and implements structured mitigation strategies.</p>
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li>Proactive risk identification across 15+ float risks</li>
+          <li>Structured risk analysis reducing project risks by 30%</li>
+          <li>Critical delay escalation and recovery action planning</li>
+          <li>Change management process implementation</li>
+          <li>Document control with zero approval delays over 6 months</li>
+          <li>Contingency planning and buffer management</li>
+          <li>Risk register maintenance and monitoring</li>
+        </ul>
+        <h4>Methodologies</h4>
+        <div class="modal-tags">
+          <span class="modal-tag">Risk Registers</span>
+          <span class="modal-tag">Monte Carlo Analysis</span>
+          <span class="modal-tag">What-If Scenarios</span>
+          <span class="modal-tag">Change Control</span>
+          <span class="modal-tag">Recovery Planning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-stakeholder">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-users" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Stakeholder & Team Leadership</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1rem;">Proven ability to align diverse teams and stakeholders toward common project objectives in complex environments.</p>
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li>Cross-functional team coordination across 26+ teams</li>
+          <li>Client relationship management at executive level</li>
+          <li>Subcontractor and vendor performance management</li>
+          <li>Stakeholder communication in high-compliance environments</li>
+          <li>Conflict resolution and negotiation</li>
+          <li>Resource planning and team capacity optimization</li>
+          <li>Leadership in both Agile and Waterfall environments</li>
+        </ul>
+        <h4>Stakeholder Groups</h4>
+        <div class="modal-tags">
+          <span class="modal-tag">Site Execution</span>
+          <span class="modal-tag">Engineering</span>
+          <span class="modal-tag">Contractors</span>
+          <span class="modal-tag">Consultants</span>
+          <span class="modal-tag">Client Leadership</span>
+          <span class="modal-tag">Quality Teams</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-engineering">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-cogs" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Engineering & Technical Tools</h3>
+        <button class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1rem;">Strong mechanical engineering foundation combined with modern technical tools for design, coordination, and analysis.</p>
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li>AutoCAD 2D coordination, drawing review, and as-built documentation</li>
+          <li>Mechanical engineering design and analysis fundamentals</li>
+          <li>ERP implementation analysis and process improvement</li>
+          <li>Technical documentation and specification writing</li>
+          <li>3D modeling and fabrication planning</li>
+          <li>FEA simulation and structural analysis</li>
+          <li>CAM programming for CNC manufacturing</li>
+        </ul>
+        <h4>Software Proficiency</h4>
+        <div class="modal-tags">
+          <span class="modal-tag">AutoCAD</span>
+          <span class="modal-tag">SolidWorks</span>
+          <span class="modal-tag">Autodesk Inventor</span>
+          <span class="modal-tag">Pro/ENGINEER (Creo)</span>
+          <span class="modal-tag">ANSYS</span>
+          <span class="modal-tag">Mastercam</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-achievement-1">
+    <div class="modal-content">
+      <div class="modal-header"><h3>£90M+ Project Portfolio</h3><button class="modal-close"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <p>Over my career, I have contributed to and supported projects with cumulative values exceeding £90 million. This portfolio spans:</p>
+        <ul>
+          <li>Industrial beverage manufacturing facilities (PepsiCo)</li>
+          <li>Large-scale sterilization plant infrastructure (Revolution-ZERO, £3M+ CAPEX)</li>
+          <li>ERP digital transformation programmes</li>
+          <li>NHS enterprise IT migration projects</li>
+          <li>University-wide diversity and inclusion strategic initiatives</li>
+        </ul>
+        <p>My role has ranged from planning engineer and project coordinator to technical project manager, giving me end-to-end visibility across the project lifecycle.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-achievement-2">
+    <div class="modal-content">
+      <div class="modal-header"><h3>98% Milestone Compliance</h3><button class="modal-close"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <p>At the PepsiCo beverage manufacturing facility in Pune, India, I developed and maintained rigorous 3-tier schedules across 30+ work packages.</p>
+        <ul>
+          <li>Achieved 98% milestone compliance over a 5-month period</li>
+          <li>Implemented progress measurement system covering 200+ activities</li>
+          <li>Tracked schedule variance to within ±5% accuracy</li>
+          <li>Coordinated daily and weekly lookaheads with 20+ subcontractor teams</li>
+          <li>Reduced workfront conflicts by 30% through proactive planning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-achievement-3">
+    <div class="modal-content">
+      <div class="modal-header"><h3>40% Reporting Efficiency Gain</h3><button class="modal-close"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <p>By standardizing reporting templates and implementing automated dashboard systems, I transformed the project reporting workflow:</p>
+        <ul>
+          <li>Reduced report generation time by 40%</li>
+          <li>Created standardized daily, weekly, and monthly report templates</li>
+          <li>Implemented automated KPI tracking dashboards</li>
+          <li>Established single-source-of-truth for progress data</li>
+          <li>Enabled real-time visibility for leadership and client reviews</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-achievement-4">
+    <div class="modal-content">
+      <div class="modal-header"><h3>Sustainability-Driven Delivery</h3><button class="modal-close"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <p>Sustainability is integrated into my project delivery approach:</p>
+        <ul>
+          <li>Supported sustainability-driven infrastructure at PepsiCo beverage facility</li>
+          <li>Contributed to process improvements in UK sterilization plants</li>
+          <li>Advocated for resource-efficient scheduling and waste reduction</li>
+          <li>Aligned project delivery with environmental compliance requirements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-edu-msc">
+    <div class="modal-content">
+      <div class="modal-header"><h3>MSc Project Management – Northumbria University</h3><button class="modal-close"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <p><strong>Degree:</strong> Master of Science (MSc), Project Management<br>
+        <strong>University:</strong> Northumbria University, Newcastle upon Tyne, UK<br>
+        <strong>Period:</strong> 2021 – 2023<br>
+        <strong>Result:</strong> 2:1 (Commendation) with Merit in Advanced Practice Semester</p>
+        <h4>Dissertation</h4>
+        <p><em>"Investigating the Feasibility of Artificial Intelligence in Risk Management Practices"</em></p>
+        <ul>
+          <li>Quantitative research study exploring AI in project risk identification, analysis, and mitigation</li>
+          <li>Dissertation Score: 65</li>
+          <li>Focused on complex project environments and machine learning applications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-edu-be">
+    <div class="modal-content">
+      <div class="modal-header"><h3>B.E. Mechanical Engineering – Pune University</h3><button class="modal-close"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <p><strong>Degree:</strong> Bachelor of Engineering (B.E.), Mechanical Engineering<br>
+        <strong>University:</strong> Savitribai Phule Pune University, Pune, India<br>
+        <strong>Year:</strong> 2020<br>
+        <strong>Result:</strong> Graduated with Distinction</p>
+        <h4>Core Areas</h4>
+        <ul>
+          <li>Mechanical Design & Machine Drawing</li>
+          <li>Thermodynamics & Fluid Mechanics</li>
+          <li>Manufacturing Processes & CNC Programming</li>
+          <li>Strength of Materials & Structural Analysis</li>
+          <li>Industrial Engineering & Operations Management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
