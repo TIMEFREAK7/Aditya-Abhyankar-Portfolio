@@ -22,6 +22,11 @@
   --accent-soft: #E6F0FA;
   --accent-glow: rgba(0, 75, 147, 0.15);
 
+  /* Open-to-work / status dot */
+  --status-available: #10b981;
+  --status-available-glow: rgba(16,185,129,0.12);
+  --logo-dot-border: var(--bg-card);
+
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
@@ -60,6 +65,10 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+}
+
+[data-theme="dark"] {
+  --logo-dot-border: var(--bg-dark);
 }
 
 /* ---- Reset ---- */
@@ -153,8 +162,10 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 .logo:hover { transform: scale(1.02); }
 .logo-dot {
-  width: 8px; height: 8px; background: var(--accent-gradient);
-  border-radius: 50%; display: inline-block; animation: pulse 2s ease-in-out infinite;
+  width: 10px; height: 10px; background: var(--status-available);
+  border-radius: 50%; display: inline-block; animation: pulse 2.5s ease-in-out infinite;
+  border: 2px solid var(--logo-dot-border);
+  box-shadow: 0 0 0 6px var(--status-available-glow);
 }
 
 .nav-links {
