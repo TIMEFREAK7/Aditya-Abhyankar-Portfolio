@@ -378,6 +378,15 @@ p { color: var(--text-secondary); line-height: 1.7; }
   transition: all var(--duration-fast);
 }
 .modal-close:hover { background: var(--danger); color: white; transform: rotate(90deg); }
+
+/* Keyboard focus indicator for modal triggers and controls — visible in both
+   themes since --accent-primary is redefined per theme; :focus-visible so it
+   only shows for keyboard focus, not mouse clicks. */
+[data-modal]:focus-visible,
+.modal-close:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 2px;
+}
 .modal-body img { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.5rem; }
 .modal-body h4 { margin: 1.5rem 0 0.75rem; color: var(--accent-primary); }
 .modal-body ul { list-style: none; }
