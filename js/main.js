@@ -8,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
   initCounters();
-  initDashboards();
   initContactForm();
-  initPageTransitions();
-  initSkillBars();
-  initParallax();
   initModals();
   initCharts();
 });
@@ -129,8 +125,6 @@ function animateCounter(element, target, prefix, suffix, duration) {
 }
 
 /* ---- Dashboard Animations ---- */
-function initDashboards() {}
-
 function animateDashboard(container) {
   container.querySelectorAll('.metric-ring-fill').forEach((ring, index) => {
     const target = parseInt(ring.getAttribute('data-target')) || 0;
@@ -141,8 +135,6 @@ function animateDashboard(container) {
 }
 
 /* ---- Skill Bars ---- */
-function initSkillBars() {}
-
 function animateSkillBars(container) {
   container.querySelectorAll('.skill-bar-fill').forEach((bar, index) => {
     const target = bar.getAttribute('data-width') || '0%';
@@ -324,17 +316,3 @@ function createConfetti() {
     ], { duration: duration, easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' }).onfinish = () => confetti.remove();
   }
 }
-
-/* ---- Page Transitions ---- */
-function initPageTransitions() {
-  // Removed: fade transitions were causing perceived slowness
-  // Links now navigate instantly for snappy feel
-}
-
-/* ---- Parallax ---- */
-function initParallax() {
-  // Removed: CSS-only parallax or simple static layout is faster
-}
-
-/* ---- Magnetic Buttons ---- */
-// Removed: magnetic effect caused layout thrashing and scroll jank
