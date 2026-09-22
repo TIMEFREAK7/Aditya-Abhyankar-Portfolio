@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCharts();
   initGanttChart();
   initProjectFilters();
+  initReadMore();
 });
 
 /* ---- Dark Mode ---- */
@@ -198,6 +199,17 @@ function initProjectFilters() {
         const matches = filter === 'all' || card.getAttribute('data-category') === filter;
         card.classList.toggle('filtered-out', !matches);
       });
+    });
+  });
+}
+
+/* ---- Read More (testimonial quotes) ---- */
+function initReadMore() {
+  document.querySelectorAll('.read-more-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const quote = btn.previousElementSibling;
+      const expanded = quote.classList.toggle('expanded');
+      btn.textContent = expanded ? 'Read less' : 'Read more';
     });
   });
 }

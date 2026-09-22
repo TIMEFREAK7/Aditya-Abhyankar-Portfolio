@@ -948,6 +948,24 @@ p { color: var(--text-secondary); line-height: 1.7; }
 [data-theme="dark"] .filter-btn:hover { border-color: #3b82f6; color: #60a5fa; }
 [data-theme="dark"] .filter-btn.active { color: white; }
 
+/* ---- Collapsible testimonial quotes ---- */
+.quote-collapsible {
+  max-height: 130px; overflow: hidden; position: relative;
+  transition: max-height var(--duration-normal) var(--ease-smooth);
+}
+.quote-collapsible::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--bg-card));
+  pointer-events: none; transition: opacity var(--duration-fast);
+}
+.quote-collapsible.expanded { max-height: none; }
+.quote-collapsible.expanded::after { opacity: 0; }
+.read-more-btn {
+  display: inline-block; margin-top: 0.75rem; background: none; border: none; padding: 0;
+  color: var(--accent-primary); font-weight: 600; font-size: 0.875rem; cursor: pointer;
+}
+.read-more-btn:hover { text-decoration: underline; }
+
 /* ---- Career Gantt chart (Experience page) ---- */
 .gantt-container {
   max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 1rem;
