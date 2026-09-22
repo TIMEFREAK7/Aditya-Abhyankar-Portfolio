@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initModals();
   initCharts();
+  initGanttChart();
 });
 
 /* ---- Dark Mode ---- */
@@ -291,6 +292,89 @@ function initChartsInContainer(container) {
         }
       } : {}
     }
+  });
+}
+
+/* ---- Career Gantt Chart (Experience page) ---- */
+function initGanttChart() {
+  const canvas = document.getElementById('career-gantt');
+  if (!canvas || typeof Chart === 'undefined' || canvas.dataset.chartInitialized) return;
+  // Guards against initChartsInContainer() also firing on this canvas: the
+  // scroll-reveal observer calls it for *any* revealed element with a
+  // <canvas>, not just .chart-container ones, and .gantt-container is also
+  // a .reveal element.
+  canvas.dataset.chartInitialized = 'true';
+
+  const monthIndex = (year, month) => (year - 2022) * 12 + (month - 1);
+  const today = new Date();
+  const presentIndex = monthIndex(today.getFullYear(), today.getMonth() + 1);
+
+  const roles = [
+    { label: 'Project Planner (FABS / PepsiCo)', start: monthIndex(2025, 10), end: presentIndex, ongoing: true },
+    { label: 'Technical Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 7) },
+    { label: 'IT Service Desk Analyst (NHS)', start: monthIndex(2023, 5), end: monthIndex(2023, 7) },
+    { label: 'Project Manager – ERP (Gray Fox Consulting)', start: monthIndex(2022, 8), end: monthIndex(2023, 2) },
+    { label: 'Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 2), end: monthIndex(2023, 7) },
+  ];
+
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const formatMonthIndex = (idx) => {
+    const year = 2022 + Math.floor(idx / 12);
+    const month = ((idx % 12) + 12) % 12;
+    return `${monthNames[month]} ${year}`;
+  };
+
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const textColor = isDark ? '#94a3b8' : '#475569';
+  const gridColor = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+  const barColor = isDark ? '#3b82f6' : '#004B93';
+  const ongoingColor = isDark ? '#60a5fa' : '#0d9488';
+
+  new Chart(canvas.getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: roles.map((r) => r.label),
+      datasets: [{
+        data: roles.map((r) => [r.start, r.end]),
+        backgroundColor: roles.map((r) => (r.ongoing ? ongoingColor : barColor)),
+        borderRadius: 6,
+        barThickness: 22,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const role = roles[ctx.dataIndex];
+              const endLabel = role.ongoing ? 'Present' : formatMonthIndex(role.end);
+              return `${formatMonthIndex(role.start)} – ${endLabel}`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          min: 0,
+          max: presentIndex + 2,
+          grid: { color: gridColor },
+          ticks: {
+            color: textColor,
+            font: { size: 11 },
+            stepSize: 12,
+            callback: (value) => (value % 12 === 0 ? String(2022 + value / 12) : ''),
+          },
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: textColor, font: { size: 11 } },
+        },
+      },
+    },
   });
 }
 
