@@ -933,6 +933,21 @@ p { color: var(--text-secondary); line-height: 1.7; }
   }
 }
 
+/* ---- Project Filters ---- */
+.filter-bar { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.filter-btn {
+  padding: 0.5rem 1.25rem; border-radius: var(--radius-full);
+  border: 2px solid var(--bg-tertiary); background: var(--bg-secondary);
+  color: var(--text-secondary); font-weight: 600; font-size: 0.9375rem;
+  cursor: pointer; transition: all var(--duration-fast) var(--ease-spring);
+}
+.filter-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.filter-btn.active { border-color: var(--accent-primary); color: white; background: var(--accent-gradient); }
+.project-card.filtered-out { display: none !important; }
+[data-theme="dark"] .filter-btn { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.1); }
+[data-theme="dark"] .filter-btn:hover { border-color: #3b82f6; color: #60a5fa; }
+[data-theme="dark"] .filter-btn.active { color: white; }
+
 /* ---- Career Gantt chart (Experience page) ---- */
 .gantt-container {
   max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 1rem;

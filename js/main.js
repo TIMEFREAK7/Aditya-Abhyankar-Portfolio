@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initCharts();
   initGanttChart();
+  initProjectFilters();
 });
 
 /* ---- Dark Mode ---- */
@@ -177,6 +178,27 @@ function initModals() {
       return;
     }
     if (e.key === 'Tab') trapFocus(e);
+  });
+}
+
+/* ---- Project Filters ---- */
+function initProjectFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  if (filterBtns.length === 0 || cards.length === 0) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach((card) => {
+        const matches = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.classList.toggle('filtered-out', !matches);
+      });
+    });
   });
 }
 

@@ -91,10 +91,18 @@
 
   <section class="section" style="padding-top: 0;">
     <div class="container">
+      <div class="filter-bar reveal" role="group" aria-label="Filter projects by sector">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="industrial">Industrial</button>
+        <button class="filter-btn" data-filter="digital">Digital Transformation</button>
+        <button class="filter-btn" data-filter="it-healthcare">IT & Healthcare</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+      </div>
+
       <div class="projects-grid">
 
         <!-- Project 1: PepsiCo -->
-        <div class="project-card reveal stagger-1" data-modal="modal-project-1" tabindex="0" role="button">
+        <div class="project-card reveal stagger-1" data-modal="modal-project-1" data-category="industrial" tabindex="0" role="button">
           <div class="project-img-wrapper">
             <img src="images/1000103723.jpg" alt="PepsiCo Beverage Facility" class="project-img" width="1400" height="788" loading="lazy">
           </div>
@@ -166,7 +174,7 @@
         </div>
 
         <!-- Project 2: Revolution-ZERO -->
-        <div class="project-card reveal stagger-2" data-modal="modal-project-2" tabindex="0" role="button">
+        <div class="project-card reveal stagger-2" data-modal="modal-project-2" data-category="industrial" tabindex="0" role="button">
           <div class="project-img-wrapper">
             <img src="images/1000103727.jpg" alt="Revolution-ZERO Sterilization Plant" class="project-img" width="850" height="481" loading="lazy">
           </div>
@@ -230,7 +238,7 @@
         </div>
 
         <!-- Project 3: ERP Implementation -->
-        <div class="project-card reveal stagger-3" data-modal="modal-project-3" tabindex="0" role="button">
+        <div class="project-card reveal stagger-3" data-modal="modal-project-3" data-category="digital" tabindex="0" role="button">
           <div class="project-img-wrapper">
             <img src="images/1000103767.jpg" alt="ERP Implementation - Gray Fox Consulting" class="project-img" width="591" height="229" loading="lazy">
           </div>
@@ -294,7 +302,7 @@
         </div>
 
         <!-- Project 4: NHS Migration -->
-        <div class="project-card reveal stagger-4" data-modal="modal-project-4" tabindex="0" role="button">
+        <div class="project-card reveal stagger-4" data-modal="modal-project-4" data-category="it-healthcare" tabindex="0" role="button">
           <div class="project-img-wrapper">
             <img src="images/1000103724.jpg" alt="NHS Email Migration" class="project-img" width="225" height="225" loading="lazy">
           </div>
@@ -358,7 +366,7 @@
         </div>
 
         <!-- Project 5: AI Risk Management -->
-        <div class="project-card reveal stagger-5" data-modal="modal-project-5" tabindex="0" role="button">
+        <div class="project-card reveal stagger-5" data-modal="modal-project-5" data-category="academic" tabindex="0" role="button">
           <div class="project-img-wrapper">
             <img src="images/1000103728.jpg" alt="AI Risk Management Research" class="project-img" width="612" height="408" loading="lazy">
           </div>
@@ -422,7 +430,7 @@
         </div>
 
         <!-- Project 6: Diversity & Inclusion -->
-        <div class="project-card reveal stagger-1" data-modal="modal-project-6" tabindex="0" role="button">
+        <div class="project-card reveal stagger-1" data-modal="modal-project-6" data-category="academic" tabindex="0" role="button">
           <div class="project-img-wrapper">
             <img src="images/1000103731.jpg" alt="Diversity & Inclusion Initiatives" class="project-img" width="1200" height="300" loading="lazy">
           </div>
