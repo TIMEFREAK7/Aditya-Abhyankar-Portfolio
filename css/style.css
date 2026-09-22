@@ -932,3 +932,47 @@ p { color: var(--text-secondary); line-height: 1.7; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---- Career Gantt chart (Experience page) ---- */
+.gantt-container {
+  max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 1rem;
+  background: var(--bg-card); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.04);
+  height: 340px;
+}
+.gantt-container canvas { max-height: 300px; }
+[data-theme="dark"] .gantt-container { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.06); }
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .navbar, .footer, .theme-toggle, .mobile-menu-btn, .floating-badge,
+  .hero-bg, .nav-cta, .btn, .modal-overlay {
+    display: none !important;
+  }
+
+  /* Force ink-friendly colors regardless of the active theme */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  body { background: #fff !important; }
+  a { color: #000 !important; text-decoration: underline; }
+
+  /* Show all scroll-reveal content even if the page was never scrolled */
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero { min-height: auto; padding-top: 0; }
+
+  .card, .competency-card, .timeline-content, .project-card, .contact-card,
+  .skills-category, .gantt-container {
+    border: 1px solid #ccc !important;
+    break-inside: avoid;
+  }
+}
