@@ -64,7 +64,7 @@
         <!-- Job 1: FABS / PepsiCo -->
         <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-modal="modal-job-1">
+          <div class="timeline-content" data-modal="modal-job-1" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103726.jpg" alt="FABS Logo" width="200" height="82" loading="lazy"></div>
             <img src="images/1000103723.jpg" alt="Industrial Manufacturing Facility" class="timeline-img" width="1400" height="788" loading="lazy">
             <span class="timeline-date">October 2025 – Present</span>
@@ -85,7 +85,7 @@
         <!-- Job 2: Revolution-ZERO -->
         <div class="timeline-item reveal-right">
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-modal="modal-job-2">
+          <div class="timeline-content" data-modal="modal-job-2" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103730.jpg" alt="Revolution-ZERO Logo" width="200" height="200" loading="lazy"></div>
             <img src="images/1000103727.jpg" alt="Sterilization Plant Facility" class="timeline-img" width="850" height="481" loading="lazy">
             <span class="timeline-date">November 2024 – July 2025</span>
@@ -106,7 +106,7 @@
         <!-- Job 3: NHS -->
         <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-modal="modal-job-3">
+          <div class="timeline-content" data-modal="modal-job-3" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103724.jpg" alt="NHS Logo" width="225" height="225" loading="lazy"></div>
             <img src="images/1000103724.jpg" alt="Healthcare IT Environment" class="timeline-img" width="225" height="225" loading="lazy">
             <span class="timeline-date">May 2023 – July 2023</span>
@@ -126,7 +126,7 @@
         <!-- Job 4: Gray Fox Consulting -->
         <div class="timeline-item reveal-right">
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-modal="modal-job-4">
+          <div class="timeline-content" data-modal="modal-job-4" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103767.jpg" alt="Gray Fox Consulting Logo" width="591" height="229" loading="lazy"></div>
             <img src="images/1000103767.jpg" alt="ERP Implementation Dashboard" class="timeline-img" width="591" height="229" loading="lazy">
             <span class="timeline-date">August 2022 – February 2023</span>
@@ -146,7 +146,7 @@
         <!-- Job 5: Northumbria University -->
         <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-modal="modal-job-5">
+          <div class="timeline-content" data-modal="modal-job-5" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103722.jpg" alt="Northumbria University Logo" width="200" height="63" loading="lazy"></div>
             <img src="images/1000103732.jpg" alt="University Campus" class="timeline-img" width="600" height="400" loading="lazy">
             <span class="timeline-date">February 2022 – July 2023</span>
@@ -218,10 +218,10 @@
   </footer>
 
   <!-- Job Detail Modals -->
-  <div class="modal-overlay" id="modal-job-1">
+  <div class="modal-overlay" id="modal-job-1" role="dialog" aria-modal="true" aria-labelledby="modal-job-1-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3><i class="fas fa-industry" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Planner / Planning Engineer</h3>
+        <h3 id="modal-job-1-title"><i class="fas fa-industry" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Planner / Planning Engineer</h3>
         <button class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
@@ -252,10 +252,10 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="modal-job-2">
+  <div class="modal-overlay" id="modal-job-2" role="dialog" aria-modal="true" aria-labelledby="modal-job-2-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3><i class="fas fa-flask" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Technical Project Manager</h3>
+        <h3 id="modal-job-2-title"><i class="fas fa-flask" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Technical Project Manager</h3>
         <button class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
@@ -288,10 +288,10 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="modal-job-3">
+  <div class="modal-overlay" id="modal-job-3" role="dialog" aria-modal="true" aria-labelledby="modal-job-3-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3><i class="fas fa-hospital" style="color:var(--accent-primary);margin-right:0.5rem;"></i>IT Service Desk Analyst</h3>
+        <h3 id="modal-job-3-title"><i class="fas fa-hospital" style="color:var(--accent-primary);margin-right:0.5rem;"></i>IT Service Desk Analyst</h3>
         <button class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
@@ -318,10 +318,10 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="modal-job-4">
+  <div class="modal-overlay" id="modal-job-4" role="dialog" aria-modal="true" aria-labelledby="modal-job-4-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3><i class="fas fa-laptop-code" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Manager – ERP Implementation</h3>
+        <h3 id="modal-job-4-title"><i class="fas fa-laptop-code" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Manager – ERP Implementation</h3>
         <button class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
@@ -349,10 +349,10 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="modal-job-5">
+  <div class="modal-overlay" id="modal-job-5" role="dialog" aria-modal="true" aria-labelledby="modal-job-5-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3><i class="fas fa-users" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Senior Student Inclusion Consultant</h3>
+        <h3 id="modal-job-5-title"><i class="fas fa-users" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Senior Student Inclusion Consultant</h3>
         <button class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">

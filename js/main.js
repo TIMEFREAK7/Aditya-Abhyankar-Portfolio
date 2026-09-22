@@ -149,6 +149,12 @@ function initModals() {
       const modalId = trigger.getAttribute('data-modal');
       openModal(modalId);
     });
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(trigger.getAttribute('data-modal'));
+      }
+    });
   });
 
   document.querySelectorAll('.modal-overlay').forEach(overlay => {
@@ -167,13 +173,41 @@ function initModals() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+      return;
     }
+    if (e.key === 'Tab') trapFocus(e);
   });
+}
+
+let lastFocusedElement = null;
+
+function getFocusableElements(modal) {
+  return Array.from(
+    modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
+  ).filter(el => !el.disabled && el.offsetParent !== null);
+}
+
+function trapFocus(e) {
+  const modal = document.querySelector('.modal-overlay.active');
+  if (!modal) return;
+  const focusable = getFocusableElements(modal);
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
 }
 
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
+    lastFocusedElement = document.activeElement;
     document.body.style.overflow = 'hidden';
     modal.classList.add('active');
     const content = modal.querySelector('.modal-content');
@@ -181,6 +215,8 @@ function openModal(id) {
       content.scrollTop = 0;
       content.style.overflowY = 'auto';
     }
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
   }
 }
 
@@ -189,6 +225,10 @@ function closeModal(id) {
   if (modal) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+      lastFocusedElement = null;
+    }
   }
 }
 
