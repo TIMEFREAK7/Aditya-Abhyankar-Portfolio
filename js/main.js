@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGanttChart();
   initProjectFilters();
   initReadMore();
+  initCommandPalette();
 });
 
 /* ---- Dark Mode ---- */
@@ -212,6 +213,125 @@ function initReadMore() {
       btn.textContent = expanded ? 'Read less' : 'Read more';
     });
   });
+}
+
+/* ---- Command Palette (Ctrl/Cmd+K) ---- */
+function initCommandPalette() {
+  const overlay = document.getElementById('command-palette');
+  if (!overlay) return;
+  const input = document.getElementById('command-palette-input');
+  const resultsEl = document.getElementById('command-palette-results');
+  const trigger = document.getElementById('palette-trigger');
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+
+  function go(page) {
+    if (page !== currentPage) window.location.href = page;
+    closePalette();
+  }
+
+  function downloadCV() {
+    const a = document.createElement('a');
+    a.href = 'Aditya_Abhyankar_CV.pdf';
+    a.download = 'Aditya_Abhyankar_CV.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    closePalette();
+  }
+
+  const commands = [
+    { label: 'Home', iconClass: 'fas fa-house', hint: 'Page', keywords: 'home index', action: () => go('index.html') },
+    { label: 'Experience', iconClass: 'fas fa-briefcase', hint: 'Page', keywords: 'experience career jobs timeline', action: () => go('experience.html') },
+    { label: 'Projects', iconClass: 'fas fa-folder-open', hint: 'Page', keywords: 'projects portfolio dashboard', action: () => go('projects.html') },
+    { label: 'Competencies', iconClass: 'fas fa-layer-group', hint: 'Page', keywords: 'competencies skills expertise', action: () => go('skills.html') },
+    { label: 'Contact', iconClass: 'fas fa-envelope', hint: 'Page', keywords: 'contact hire', action: () => go('contact.html') },
+    { label: 'Download CV', iconClass: 'fas fa-download', hint: 'Action', keywords: 'resume cv pdf download', action: downloadCV },
+    { label: 'Toggle Light / Dark Mode', iconClass: 'fas fa-moon', hint: 'Action', keywords: 'theme dark light mode toggle', action: () => { document.querySelector('.theme-toggle')?.click(); closePalette(); } },
+    { label: 'Email Me', iconClass: 'fas fa-paper-plane', hint: 'Action', keywords: 'email mail', action: () => { window.location.href = 'mailto:Aditya.abhyankar22@gmail.com'; closePalette(); } },
+    { label: 'Call', iconClass: 'fas fa-phone', hint: 'Action', keywords: 'call phone number', action: () => { window.location.href = 'tel:+919011557131'; closePalette(); } },
+    { label: 'View LinkedIn', iconClass: 'fab fa-linkedin', hint: 'Action', keywords: 'linkedin profile social', action: () => { window.open('https://www.linkedin.com/in/aditya-abhyankar-249370194', '_blank', 'noopener'); closePalette(); } },
+  ];
+
+  let filtered = commands;
+  let activeIndex = 0;
+
+  function render() {
+    resultsEl.innerHTML = '';
+    if (filtered.length === 0) {
+      const li = document.createElement('li');
+      li.className = 'command-palette-empty';
+      li.textContent = 'No matches found.';
+      resultsEl.appendChild(li);
+      return;
+    }
+    filtered.forEach((cmd, i) => {
+      const li = document.createElement('li');
+      li.className = i === activeIndex ? 'active' : '';
+      li.setAttribute('role', 'option');
+      const icon = document.createElement('i');
+      icon.className = cmd.iconClass;
+      const label = document.createElement('span');
+      label.textContent = cmd.label;
+      const hint = document.createElement('span');
+      hint.className = 'cp-hint';
+      hint.textContent = cmd.hint;
+      li.append(icon, label, hint);
+      li.addEventListener('mouseenter', () => { activeIndex = i; render(); });
+      li.addEventListener('click', runActive);
+      resultsEl.appendChild(li);
+    });
+  }
+
+  function runActive() {
+    const cmd = filtered[activeIndex];
+    if (cmd) cmd.action();
+  }
+
+  function filterCommands(query) {
+    const q = query.trim().toLowerCase();
+    filtered = !q ? commands : commands.filter(c => (c.label + ' ' + c.keywords).toLowerCase().includes(q));
+    activeIndex = 0;
+    render();
+  }
+
+  function openPalette() {
+    if (document.querySelector('.modal-overlay.active')) return;
+    filterCommands('');
+    input.value = '';
+    openModal('command-palette');
+    input.focus();
+  }
+
+  function closePalette() {
+    closeModal('command-palette');
+  }
+
+  if (trigger) trigger.addEventListener('click', openPalette);
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (overlay.classList.contains('active')) closePalette();
+      else openPalette();
+    }
+  });
+
+  input.addEventListener('input', () => filterCommands(input.value));
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (filtered.length) { activeIndex = (activeIndex + 1) % filtered.length; render(); }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (filtered.length) { activeIndex = (activeIndex - 1 + filtered.length) % filtered.length; render(); }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      runActive();
+    }
+  });
+
+  render();
 }
 
 let lastFocusedElement = null;
