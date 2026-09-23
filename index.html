@@ -74,6 +74,7 @@
         <a href="contact.html" class="nav-cta">
           <i class="fas fa-paper-plane"></i> Hire Me
         </a>
+        <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
         <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
           <i class="fas fa-moon"></i>
         </button>
@@ -292,7 +293,7 @@
       <div class="card reveal text-center" style="background: var(--accent-gradient); color: white; border: none; cursor: default;">
         <h2 style="color: white; margin-bottom: 1rem;">Let's Build Something Great Together</h2>
         <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 1.5rem;">
-          Whether you need project planning expertise, technical coordination, or engineering leadership—I'm ready to deliver results.
+          Whether you need project planning expertise, technical coordination, or engineering leadership, I'm ready to deliver results.
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="contact.html" class="btn" style="background: white; color: #004B93;">
@@ -628,6 +629,18 @@
           <li>Industrial Engineering & Operations Management</li>
         </ul>
       </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay command-palette-overlay" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="command-palette-label">
+    <div class="command-palette">
+      <div class="command-palette-input-row">
+        <i class="fas fa-search"></i>
+        <label id="command-palette-label" for="command-palette-input" class="sr-only">Search pages and actions</label>
+        <input type="text" id="command-palette-input" placeholder="Search pages, actions..." autocomplete="off" role="combobox" aria-expanded="true" aria-controls="command-palette-results" aria-autocomplete="list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="command-palette-results" id="command-palette-results" role="listbox"></ul>
     </div>
   </div>
 

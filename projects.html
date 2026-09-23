@@ -70,6 +70,7 @@
       </ul>
       <div style="display:flex;align-items:center;gap:0.5rem;">
         <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
         <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
       <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -713,6 +714,18 @@
           <span class="modal-tag">TEDx Co-Organiser</span><span class="modal-tag">Student Satisfaction</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay command-palette-overlay" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="command-palette-label">
+    <div class="command-palette">
+      <div class="command-palette-input-row">
+        <i class="fas fa-search"></i>
+        <label id="command-palette-label" for="command-palette-input" class="sr-only">Search pages and actions</label>
+        <input type="text" id="command-palette-input" placeholder="Search pages, actions..." autocomplete="off" role="combobox" aria-expanded="true" aria-controls="command-palette-results" aria-autocomplete="list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="command-palette-results" id="command-palette-results" role="listbox"></ul>
     </div>
   </div>
 

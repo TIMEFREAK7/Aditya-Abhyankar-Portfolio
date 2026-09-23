@@ -92,6 +92,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 
 /* ---- Layout ---- */
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .section { padding: 5rem 0; position: relative; }
 .section-header { text-align: center; max-width: 650px; margin: 0 auto 3rem; }
 .section-header h2 { margin-bottom: 0.5rem; }
@@ -172,6 +173,59 @@ p { color: var(--text-secondary); line-height: 1.7; }
   font-size: 1rem; transition: all var(--duration-fast) var(--ease-spring); margin-left: 0.5rem;
 }
 .theme-toggle:hover { transform: rotate(15deg) scale(1.1); border-color: var(--accent-primary); color: var(--accent-primary); }
+
+.palette-trigger {
+  width: 40px; height: 40px; border-radius: var(--radius-full);
+  border: 2px solid var(--bg-tertiary); background: var(--bg-secondary);
+  color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 0.9375rem; transition: all var(--duration-fast) var(--ease-spring);
+}
+.palette-trigger:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+
+/* Command palette */
+.command-palette-overlay { align-items: flex-start; padding-top: 12vh; }
+.command-palette {
+  background: var(--bg-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);
+  width: 100%; max-width: 560px; max-height: 70vh; overflow: hidden;
+  display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.06);
+}
+.command-palette-input-row {
+  display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--bg-tertiary); flex-shrink: 0;
+}
+.command-palette-input-row i { color: var(--text-light); font-size: 0.9375rem; }
+.command-palette-input-row input {
+  flex: 1; border: none; outline: none; background: none; font-size: 1rem;
+  font-family: inherit; color: var(--text-primary);
+}
+.command-palette-input-row input::placeholder { color: var(--text-light); }
+.command-palette-input-row kbd {
+  font-family: inherit; font-size: 0.75rem; color: var(--text-light); border: 1px solid var(--bg-tertiary);
+  border-radius: 0.35rem; padding: 0.15rem 0.4rem;
+}
+.command-palette-results { list-style: none; overflow-y: auto; padding: 0.5rem; }
+.command-palette-results li {
+  display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0.75rem;
+  border-radius: var(--radius-md); cursor: pointer; color: var(--text-primary);
+  transition: background var(--duration-fast) var(--ease-smooth);
+}
+.command-palette-results li i { width: 18px; text-align: center; color: var(--accent-primary); }
+.command-palette-results li .cp-hint { margin-left: auto; font-size: 0.8125rem; color: var(--text-light); }
+.command-palette-results li.active .cp-hint,
+.command-palette-results li:hover .cp-hint { color: var(--text-secondary); }
+.command-palette-results li.active,
+.command-palette-results li:hover { background: var(--accent-soft); }
+.command-palette-results li.active i,
+.command-palette-results li:hover i { color: var(--accent-primary); }
+.command-palette-empty { padding: 1.5rem; text-align: center; color: var(--text-light); font-size: 0.9375rem; }
+
+[data-theme="dark"] .command-palette { border-color: rgba(255,255,255,0.08); }
+[data-theme="dark"] .command-palette-input-row { border-color: rgba(255,255,255,0.08); }
+[data-theme="dark"] .command-palette-input-row kbd { border-color: rgba(255,255,255,0.12); }
+[data-theme="dark"] .palette-trigger { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.1); }
+[data-theme="dark"] .palette-trigger:hover { border-color: #3b82f6; color: #60a5fa; }
+[data-theme="dark"] .command-palette-results li.active,
+[data-theme="dark"] .command-palette-results li:hover { background: rgba(59, 130, 246, 0.15); }
 
 .mobile-menu-btn {
   display: none; flex-direction: column; gap: 5px; background: none; border: none;
@@ -380,7 +434,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 .modal-close:hover { background: var(--danger); color: white; transform: rotate(90deg); }
 
-/* Keyboard focus indicator for modal triggers and controls — visible in both
+/* Keyboard focus indicator for modal triggers and controls, visible in both
    themes since --accent-primary is redefined per theme; :focus-visible so it
    only shows for keyboard focus, not mouse clicks. */
 [data-modal]:focus-visible,
@@ -893,6 +947,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
   .nav-links { top: 56px; padding: 1rem; }
   .nav-cta { padding: 0.5rem 1rem; font-size: 0.875rem; }
   .theme-toggle { width: 36px; height: 36px; }
+  .palette-trigger { width: 36px; height: 36px; }
+  .command-palette-overlay { padding-top: 5vh; padding-left: 1rem; padding-right: 1rem; }
+  .command-palette { max-width: 100%; max-height: 80vh; }
 }
 
 @media (max-width: 480px) {
