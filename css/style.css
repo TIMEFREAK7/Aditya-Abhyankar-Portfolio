@@ -82,12 +82,9 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 p { color: var(--text-secondary); line-height: 1.7; }
 
 .section-label {
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  display: inline-flex; align-items: center;
   font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
   color: var(--accent-primary); margin-bottom: 0.75rem;
-}
-.section-label::before {
-  content: ''; width: 24px; height: 2px; background: var(--accent-primary); border-radius: 2px;
 }
 
 /* ---- Layout ---- */
@@ -656,7 +653,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 .section-dark .card { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.1); }
 .section-dark .stat-number { color: #3b82f6; }
 .section-dark .section-label { color: #6BBFDB; }
-.section-dark .section-label::before { background: #6BBFDB; }
 
 /* Utility */
 .text-center { text-align: center; }
@@ -756,7 +752,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 [data-theme="dark"] .floating-badge { background: var(--bg-dark-soft); color: var(--text-primary); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
 [data-theme="dark"] .floating-badge .icon { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
 [data-theme="dark"] .section-label { color: #60a5fa; }
-[data-theme="dark"] .section-label::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
 [data-theme="dark"] .card { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.06); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
 [data-theme="dark"] .card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); border-color: rgba(59, 130, 246, 0.3); }
 [data-theme="dark"] .card h4 { color: var(--text-primary); }
