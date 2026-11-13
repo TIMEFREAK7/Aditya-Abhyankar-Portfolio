@@ -543,6 +543,7 @@ function initContactForm() {
   const statusDiv = document.getElementById('formStatus');
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalBtnText = submitBtn.innerHTML;
+  let hideStatusTimer;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -572,7 +573,8 @@ function initContactForm() {
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
-      setTimeout(() => { statusDiv.className = 'form-status'; }, 5000);
+      clearTimeout(hideStatusTimer);
+      hideStatusTimer = setTimeout(() => { statusDiv.className = 'form-status'; }, 5000);
     }
   });
 }
