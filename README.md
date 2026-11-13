@@ -5,7 +5,7 @@ A five-page static portfolio built to showcase technical project management, eng
 ## Features
 
 - **Dark / light mode**: manual toggle, persisted via `localStorage`, defaults to the visitor's OS preference on first visit.
-- **Command palette (Ctrl/Cmd+K)**: fuzzy-searchable quick nav to any page plus actions (download CV, toggle theme, email, call, LinkedIn).
+- **Command palette (Ctrl/Cmd+K)**: searchable quick nav to any page plus actions (download CV, toggle theme, email, call, LinkedIn).
 - **Scroll-reveal animations**: IntersectionObserver-driven fade/slide-in for sections and cards, with staggered delays.
 - **Animated counters**: hero and "Portfolio at a Glance" stats count up when scrolled into view.
 - **Interactive dashboards**: Chart.js metric rings and charts on project cards, plus a custom Chart.js-based Gantt chart for the career timeline.
