@@ -572,7 +572,7 @@ function initContactForm() {
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
-      setTimeout(() => { statusDiv.style.display = 'none'; }, 5000);
+      setTimeout(() => { statusDiv.className = 'form-status'; }, 5000);
     }
   });
 }
