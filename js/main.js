@@ -149,11 +149,14 @@ function animateSkillBars(container) {
 /* ---- Modals ---- */
 function initModals() {
   document.querySelectorAll('[data-modal]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
+    // Inner links (e.g. map links) do their own thing and must not open the modal.
+    trigger.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
       const modalId = trigger.getAttribute('data-modal');
       openModal(modalId);
     });
     trigger.addEventListener('keydown', (e) => {
+      if (e.target.closest('a')) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openModal(trigger.getAttribute('data-modal'));
