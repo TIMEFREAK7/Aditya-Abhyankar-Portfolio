@@ -55,12 +55,14 @@ function initNavigation() {
   if (mobileBtn) {
     mobileBtn.addEventListener('click', () => {
       mobileBtn.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+      const open = navLinks.classList.toggle('active');
+      mobileBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileBtn.classList.remove('active');
+        mobileBtn.setAttribute('aria-expanded', 'false');
         navLinks.classList.remove('active');
         document.body.style.overflow = '';
       });
