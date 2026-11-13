@@ -22,11 +22,8 @@ function initDarkMode() {
   const toggle = document.querySelector('.theme-toggle');
   if (!toggle) return;
 
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+  // The inline script in each page's <head> has already set data-theme.
+  if (document.documentElement.getAttribute('data-theme') === 'dark') {
     toggle.innerHTML = '<i class="fas fa-sun"></i>';
   }
 
