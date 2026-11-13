@@ -38,6 +38,7 @@ function initDarkMode() {
       localStorage.setItem('theme', 'dark');
       toggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
+    restyleCharts();
   });
 }
 
@@ -388,6 +389,29 @@ function closeModal(id) {
 }
 
 /* ---- Charts (Chart.js) ---- */
+function chartColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    isDark,
+    textColor: isDark ? '#94a3b8' : '#475569',
+    gridColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
+  };
+}
+
+// Re-applies axis and legend colours to existing charts after a theme toggle.
+function restyleCharts() {
+  if (typeof Chart === 'undefined') return;
+  const { textColor, gridColor } = chartColors();
+  Object.values(Chart.instances).forEach((chart) => {
+    Object.values(chart.options.scales || {}).forEach((scale) => {
+      scale.ticks.color = textColor;
+      if (scale.grid.display !== false) scale.grid.color = gridColor;
+    });
+    chart.options.plugins.legend.labels.color = textColor;
+    chart.update('none');
+  });
+}
+
 function initCharts() {
   if (typeof Chart === 'undefined') return;
   document.querySelectorAll('.chart-container').forEach(container => {
@@ -405,9 +429,7 @@ function initChartsInContainer(container) {
   const data = JSON.parse(canvas.dataset.data || '[]');
   const label = canvas.dataset.label || 'Metric';
 
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const textColor = isDark ? '#94a3b8' : '#475569';
-  const gridColor = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+  const { textColor, gridColor } = chartColors();
 
   const ctx = canvas.getContext('2d');
 
@@ -478,9 +500,7 @@ function initGanttChart() {
     return `${monthNames[month]} ${year}`;
   };
 
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const textColor = isDark ? '#94a3b8' : '#475569';
-  const gridColor = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+  const { isDark, textColor, gridColor } = chartColors();
   const barColor = isDark ? '#3b82f6' : '#004B93';
   const ongoingColor = isDark ? '#60a5fa' : '#0d9488';
 
