@@ -341,7 +341,7 @@ let lastFocusedElement = null;
 
 function getFocusableElements(modal) {
   return Array.from(
-    modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
+    modal.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
   ).filter(el => !el.disabled && el.offsetParent !== null);
 }
 
