@@ -85,6 +85,10 @@ Then open `http://localhost:8123/index.html`.
 - Update theme colors and spacing via the CSS custom properties in `css/style.css` (`:root` and the `[data-theme="dark"]` override block).
 - The command palette's command list lives in `initCommandPalette()` in `js/main.js`.
 
+## Licence
+
+The MIT licence in `LICENSE` covers the code only (HTML, CSS and JavaScript). It does not cover the written content, photos, images or the CV PDFs.
+
 ---
 
 © 2026 Aditya Abhyankar
