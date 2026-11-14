@@ -334,7 +334,9 @@ p { color: var(--text-secondary); line-height: 1.7; }
 }
 .competency-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .competency-card:hover::before { transform: scaleY(1); }
-.competency-card h4 { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+.competency-card h3 { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+/* Card titles were h4 before the heading-order fix; keep their size. */
+.card h3, .competency-card h3 { font-size: 1em; }
 .competency-card p { font-size: 0.9375rem; }
 
 /* ---- Experience Timeline (Bigger Cards) ---- */
@@ -542,7 +544,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
   color: var(--accent-primary); font-size: 1.25rem; transition: all var(--duration-fast) var(--ease-spring);
 }
 .contact-card:hover .contact-icon { background: var(--accent-gradient); color: white; transform: rotate(-10deg) scale(1.1); }
-.contact-detail h4 { margin-bottom: 0.25rem; font-size: 1rem; }
+.contact-detail h3 { margin-bottom: 0.25rem; font-size: 1rem; }
 .contact-detail p, .contact-detail a { font-size: 0.9375rem; color: var(--text-secondary); }
 .contact-detail a:hover { color: var(--accent-primary); }
 
@@ -742,12 +744,12 @@ p { color: var(--text-secondary); line-height: 1.7; }
 [data-theme="dark"] .section-label { color: #60a5fa; }
 [data-theme="dark"] .card { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.06); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
 [data-theme="dark"] .card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); border-color: rgba(59, 130, 246, 0.3); }
-[data-theme="dark"] .card h4 { color: var(--text-primary); }
+[data-theme="dark"] .card h3 { color: var(--text-primary); }
 [data-theme="dark"] .card p { color: #94a3b8; }
 [data-theme="dark"] .card-icon { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
 [data-theme="dark"] .card:hover .card-icon { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; }
 [data-theme="dark"] .competency-card { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.06); }
-[data-theme="dark"] .competency-card h4 { color: var(--text-primary); }
+[data-theme="dark"] .competency-card h3 { color: var(--text-primary); }
 [data-theme="dark"] .competency-card p { color: #94a3b8; }
 [data-theme="dark"] .competency-card::before { background: linear-gradient(180deg, #3b82f6, #60a5fa); }
 [data-theme="dark"] .timeline::before { background: linear-gradient(to bottom, #3b82f6, #1d4ed8); }
@@ -786,7 +788,7 @@ p { color: var(--text-secondary); line-height: 1.7; }
 [data-theme="dark"] .contact-card:hover { border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); }
 [data-theme="dark"] .contact-icon { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
 [data-theme="dark"] .contact-card:hover .contact-icon { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; }
-[data-theme="dark"] .contact-detail h4 { color: var(--text-primary); }
+[data-theme="dark"] .contact-detail h3 { color: var(--text-primary); }
 [data-theme="dark"] .contact-detail p, [data-theme="dark"] .contact-detail a { color: #94a3b8; }
 [data-theme="dark"] .contact-detail a:hover { color: #60a5fa; }
 [data-theme="dark"] .contact-form-wrapper { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.06); }
