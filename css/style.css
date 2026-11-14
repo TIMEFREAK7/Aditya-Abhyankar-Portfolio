@@ -526,16 +526,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 .skill-header { display: flex; justify-content: space-between; align-items: center; }
 .skill-name { font-weight: 600; font-size: 0.9375rem; }
 .skill-percent { font-size: 0.875rem; font-weight: 700; color: var(--accent-primary); }
-.skill-bar { height: 8px; background: var(--bg-primary); border-radius: 4px; overflow: hidden; }
-.skill-bar-fill {
-  height: 100%; background: var(--accent-gradient); border-radius: 4px; width: 0;
-  transition: width var(--duration-slower) var(--ease-out-expo); position: relative; overflow: hidden;
-}
-.skill-bar-fill::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation: shimmer 1.2s infinite;
-}
 
 /* ---- Contact ---- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: start; }
@@ -628,10 +618,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
-}
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
 }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: all var(--duration-slow) var(--ease-out-expo); will-change: transform, opacity; }
@@ -796,8 +782,6 @@ p { color: var(--text-secondary); line-height: 1.7; }
 [data-theme="dark"] .skills-category-title { color: var(--text-primary); }
 [data-theme="dark"] .skill-name { color: var(--text-primary); }
 [data-theme="dark"] .skill-percent { color: #60a5fa; }
-[data-theme="dark"] .skill-bar { background: rgba(255,255,255,0.08); }
-[data-theme="dark"] .skill-bar-fill { background: linear-gradient(90deg, #2563eb, #3b82f6); }
 [data-theme="dark"] .contact-card { background: var(--bg-dark-soft); border-color: rgba(255,255,255,0.06); }
 [data-theme="dark"] .contact-card:hover { border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); }
 [data-theme="dark"] .contact-icon { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }

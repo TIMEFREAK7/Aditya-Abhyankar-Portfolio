@@ -85,7 +85,6 @@ function initScrollAnimations() {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
         if (entry.target.querySelector('.metric-ring-fill')) animateDashboard(entry.target);
-        if (entry.target.querySelector('.skill-bar-fill')) animateSkillBars(entry.target);
         if (entry.target.querySelector('canvas')) initChartsInContainer(entry.target);
         observer.unobserve(entry.target);
       }
@@ -135,14 +134,6 @@ function animateDashboard(container) {
     const circumference = 2 * Math.PI * 30;
     const offset = circumference - (target / 100) * circumference;
     setTimeout(() => { ring.style.strokeDashoffset = offset; }, index * 80);
-  });
-}
-
-/* ---- Skill Bars ---- */
-function animateSkillBars(container) {
-  container.querySelectorAll('.skill-bar-fill').forEach((bar, index) => {
-    const target = bar.getAttribute('data-width') || '0%';
-    setTimeout(() => { bar.style.width = target; }, index * 60);
   });
 }
 
