@@ -35,6 +35,7 @@ Aditya-Abhyankar-Portfolio/
 ├── projects.html              # Project dashboards, sector filter
 ├── skills.html                # Competencies page
 ├── contact.html               # Contact form and details
+├── case-study.html            # Case study: defending a delay claim
 ├── 404.html                   # Not-found page (Vercel serves it automatically)
 ├── vercel.json                # Security headers
 ├── Aditya_Abhyankar_CV.pdf    # Default CV download (Project Manager version)

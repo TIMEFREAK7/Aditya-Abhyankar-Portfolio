@@ -20,4 +20,8 @@
     <loc>https://aditya-abhyankar-portfolio-c3d9.vercel.app/contact.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://aditya-abhyankar-portfolio-c3d9.vercel.app/case-study.html</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>
