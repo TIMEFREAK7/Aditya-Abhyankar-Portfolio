@@ -35,7 +35,8 @@ Aditya-Abhyankar-Portfolio/
 ├── projects.html              # Project dashboards, sector filter
 ├── skills.html                # Competencies page
 ├── contact.html               # Contact form and details
-├── Aditya_Abhyankar_CV.pdf    # Resume download (kept in sync with site content)
+├── Aditya_Abhyankar_CV.pdf    # Default CV download (Project Manager version)
+├── Aditya_Abhyankar_CV_*.pdf  # Senior Planner, Project Controls and Project Planner versions
 ├── css/
 │   └── style.css              # Theme variables, layout, dark mode, animations, print styles
 ├── js/
