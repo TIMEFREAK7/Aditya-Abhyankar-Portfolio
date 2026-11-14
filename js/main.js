@@ -219,13 +219,14 @@ function initCommandPalette() {
   const currentPage = location.pathname.split('/').pop() || 'index.html';
 
   function go(page) {
-    if (page !== currentPage) window.location.href = page;
+    // Root-relative so the palette also works from 404 pages at nested paths.
+    if (page !== currentPage) window.location.href = '/' + page;
     closePalette();
   }
 
   function downloadCV() {
     const a = document.createElement('a');
-    a.href = 'Aditya_Abhyankar_CV.pdf';
+    a.href = '/Aditya_Abhyankar_CV.pdf';
     a.download = 'Aditya_Abhyankar_CV.pdf';
     document.body.appendChild(a);
     a.click();
