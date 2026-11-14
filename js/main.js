@@ -482,7 +482,7 @@ function initGanttChart() {
   const roles = [
     { label: 'Central Scheduler (FABS: Bisleri, Schaeffler)', start: monthIndex(2026, 10), end: presentIndex, ongoing: true },
     { label: 'Project Engineer – Planning (FABS / PepsiCo)', start: monthIndex(2025, 10), end: monthIndex(2026, 10) },
-    { label: 'Technical Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 6) },
+    { label: 'Technical and Commercial Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 6) },
     { label: 'IT Support Analyst (NHS)', start: monthIndex(2023, 5), end: monthIndex(2023, 8) },
     { label: 'Project Manager – ERP (Gray Fox Consulting)', start: monthIndex(2022, 9), end: monthIndex(2023, 2) },
     { label: 'Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 1), end: monthIndex(2023, 7) },
