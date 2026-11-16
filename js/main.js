@@ -485,7 +485,7 @@ function initGanttChart() {
     { label: 'Technical and Commercial Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 6) },
     { label: 'IT Support Analyst (NHS)', start: monthIndex(2023, 5), end: monthIndex(2023, 8) },
     { label: 'Project Manager – ERP (Gray Fox Consulting)', start: monthIndex(2022, 9), end: monthIndex(2023, 2) },
-    { label: 'Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 1), end: monthIndex(2023, 7) },
+    { label: 'Senior Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 1), end: monthIndex(2023, 7) },
   ];
 
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

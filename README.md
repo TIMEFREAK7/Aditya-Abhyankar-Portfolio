@@ -1,6 +1,6 @@
 # Aditya Abhyankar: Professional Portfolio
 
-A five-page static portfolio built to showcase technical project management, engineering delivery, and CAPEX/industrial project experience in a recruiter-friendly format. Live at [aditya-abhyankar-portfolio-c3d9.vercel.app](https://aditya-abhyankar-portfolio-c3d9.vercel.app).
+A static portfolio built to showcase technical project management, engineering delivery, and CAPEX/industrial project experience in a recruiter-friendly format. Live at [aditya-abhyankar-portfolio-c3d9.vercel.app](https://aditya-abhyankar-portfolio-c3d9.vercel.app).
 
 ## Features
 
@@ -16,15 +16,16 @@ A five-page static portfolio built to showcase technical project management, eng
 - **SEO/sharing**: JSON-LD `Person` structured data, Open Graph/Twitter meta tags, canonical URLs, `robots.txt`, `sitemap.xml`, and favicons.
 - **Analytics**: Vercel Web Analytics.
 - **Print stylesheet**: a clean, ink-friendly layout when printed or saved as PDF.
-- **Downloadable CV**: a PDF resume kept in sync with the site's content.
+- **Downloadable CVs**: four PDF versions (Project Manager by default, plus Senior Planner, Project Controls and Project Planner), kept in sync with the site's content.
 
 ## Site Pages
 
 1. **Home** (`index.html`): introduction, hero stats, core competencies, key achievements, testimonials.
 2. **Experience** (`experience.html`): career Gantt chart plus a detailed timeline with click-to-expand modals.
 3. **Projects** (`projects.html`): filterable project dashboards with metrics, tags, and cumulative impact stats.
-4. **Competencies** (`skills.html`): categorized skills with animated progress bars.
-5. **Contact** (`contact.html`): contact form, direct contact details, and CV download.
+4. **Competencies** (`skills.html`): categorized skills, languages and achievements.
+5. **Contact** (`contact.html`): contact form, direct contact details, and CV downloads.
+6. **Case study** (`case-study.html`): defending a contractor delay claim, linked from Projects.
 
 ## File Structure
 
