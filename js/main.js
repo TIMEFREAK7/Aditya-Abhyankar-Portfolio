@@ -49,6 +49,7 @@ function initNavigation() {
   const navLinks = document.querySelector('.nav-links');
 
   window.addEventListener('scroll', () => {
+    if (document.body.style.position === 'fixed') return; // page is pinned behind an open popup
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 
@@ -354,11 +355,26 @@ function trapFocus(e) {
   }
 }
 
+// iOS Safari ignores overflow: hidden on <body>, so the page behind an open popup
+// still scrolled under the finger. Pinning the body in place locks it everywhere.
+let lockedScrollY = 0;
+
+function lockPageScroll() {
+  lockedScrollY = window.scrollY;
+  Object.assign(document.body.style, { position: 'fixed', top: `-${lockedScrollY}px`, left: '0', right: '0', overflow: 'hidden' });
+}
+
+function unlockPageScroll() {
+  Object.assign(document.body.style, { position: '', top: '', left: '', right: '', overflow: '' });
+  // 'instant' overrides the page's smooth scrolling, which would visibly scroll back from the top.
+  window.scrollTo({ top: lockedScrollY, behavior: 'instant' });
+}
+
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
     lastFocusedElement = document.activeElement;
-    document.body.style.overflow = 'hidden';
+    lockPageScroll();
     modal.classList.add('active');
     const content = modal.querySelector('.modal-content');
     if (content) {
@@ -366,17 +382,17 @@ function openModal(id) {
       content.style.overflowY = 'auto';
     }
     const closeBtn = modal.querySelector('.modal-close');
-    if (closeBtn) closeBtn.focus();
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
 }
 
 function closeModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
+  if (modal && modal.classList.contains('active')) {
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    unlockPageScroll();
     if (lastFocusedElement) {
-      lastFocusedElement.focus();
+      lastFocusedElement.focus({ preventScroll: true });
       lastFocusedElement = null;
     }
   }
