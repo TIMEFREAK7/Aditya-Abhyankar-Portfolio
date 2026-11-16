@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the theme before CSS loads so dark-mode visitors get no light flash. -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <title>Contact | Aditya Abhyankar - Let's Connect</title>
   <meta name="description" content="Get in touch with Aditya Abhyankar for project management, engineering, and technical leadership opportunities across UK and India.">
   <link rel="canonical" href="https://aditya-abhyankar-portfolio-c3d9.vercel.app/contact.html">
@@ -14,11 +16,13 @@
   <meta property="og:title" content="Contact | Aditya Abhyankar - Let's Connect">
   <meta property="og:description" content="Get in touch with Aditya Abhyankar for project management, engineering, and technical leadership opportunities across UK and India.">
   <meta property="og:url" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/contact.html">
-  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact | Aditya Abhyankar - Let's Connect">
   <meta name="twitter:description" content="Get in touch with Aditya Abhyankar for project management, engineering, and technical leadership opportunities across UK and India.">
-  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aditya Abhyankar",
-    "jobTitle": "Technical Project Manager & Mechanical Engineer",
+    "jobTitle": "Central Scheduler and Technical & Commercial Project Manager",
     "url": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/",
     "image": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg",
     "email": "mailto:Aditya.abhyankar22@gmail.com",
@@ -57,6 +61,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-dot"></span> Aditya Abhyankar</a>
@@ -72,9 +77,11 @@
         <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
         <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <main id="main">
 
   <section class="hero" style="min-height: 50vh; padding-top: 100px;">
     <div class="hero-bg"></div>
@@ -91,27 +98,29 @@
 
   <section class="section" style="padding-top: 0;">
     <div class="container">
+      <h2 class="sr-only">Contact Options</h2>
       <div class="contact-grid">
         <div class="contact-info">
           <div class="contact-card reveal stagger-1">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div class="contact-detail"><h4>Email</h4><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a><br><a href="mailto:aaabhyankar97@gmail.com?subject=Contact from Portfolio">aaabhyankar97@gmail.com</a></div>
+            <div class="contact-detail"><h3>Email</h3><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a><br><a href="mailto:aaabhyankar97@gmail.com?subject=Contact from Portfolio">aaabhyankar97@gmail.com</a></div>
           </div>
           <div class="contact-card reveal stagger-2">
             <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div class="contact-detail"><h4>Phone</h4><a href="tel:+919011557131">+91 90115 57131</a></div>
+            <div class="contact-detail"><h3>Phone</h3><a href="tel:+919011557131">+91 90115 57131</a></div>
           </div>
           <div class="contact-card reveal stagger-3">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="contact-detail"><h4>Location</h4><p><a href="https://www.google.com/maps/search/?api=1&query=Pune,India" target="_blank" rel="noopener noreferrer" class="location-link">Pune, India <i class="fas fa-external-link-alt" style="font-size:0.75rem;margin-left:0.25rem;"></i></a></p></div>
+            <div class="contact-detail"><h3>Location</h3><p><a href="https://www.google.com/maps/search/?api=1&query=Pune,India" target="_blank" rel="noopener noreferrer" class="location-link">Pune, India <i class="fas fa-external-link-alt" style="font-size:0.75rem;margin-left:0.25rem;"></i></a></p></div>
           </div>
           <div class="contact-card reveal stagger-4">
             <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div class="contact-detail"><h4>LinkedIn</h4><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank">linkedin.com/in/aditya-abhyankar-249370194</a></div>
+            <div class="contact-detail"><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer">linkedin.com/in/aditya-abhyankar-249370194</a></div>
           </div>
           <div class="contact-card reveal stagger-5">
             <div class="contact-icon"><i class="fas fa-file-alt"></i></div>
-            <div class="contact-detail"><h4>CV / Resume</h4><a href="Aditya_Abhyankar_CV.pdf" download="Aditya_Abhyankar_CV.pdf">Download PDF Version</a></div>
+            <div class="contact-detail"><h3>CV / Resume</h3><a href="Aditya_Abhyankar_CV.pdf" download="Aditya_Abhyankar_CV.pdf">Download PDF (Project Manager)</a>
+              <p style="font-size:0.875rem;margin-top:0.25rem;">Other versions: <a href="Aditya_Abhyankar_CV_Senior_Planner.pdf" download>Senior Planner</a> · <a href="Aditya_Abhyankar_CV_Project_Controls.pdf" download>Project Controls</a> · <a href="Aditya_Abhyankar_CV_Project_Planner.pdf" download>Project Planner</a></p></div>
           </div>
         </div>
 
@@ -161,7 +170,7 @@
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
 
-            <div id="formStatus" class="form-status"></div>
+            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -177,31 +186,33 @@
       <div class="competencies-grid" style="max-width: 800px; margin: 0 auto;">
         <div class="card reveal stagger-1 text-center">
           <div class="card-icon" style="background: #d1fae5; color: #059669;"><i class="fas fa-check-circle"></i></div>
-          <h4>Open to Opportunities</h4>
+          <h3>Open to Opportunities</h3>
           <p>Currently based in Pune, India and actively seeking project management and technical leadership roles across industrial, manufacturing, and infrastructure sectors.</p>
         </div>
         <div class="card reveal stagger-2 text-center">
           <div class="card-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-globe"></i></div>
-          <h4>Flexible Location</h4>
+          <h3>Flexible Location</h3>
           <p>Experienced working across UK and India. Open to relocation, hybrid, and remote opportunities depending on role requirements.</p>
         </div>
       </div>
     </div>
   </section>
 
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Aditya Abhyankar</div>
-          <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
+          <p class="footer-desc">Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Quick Links</h4>
+          <h2 class="footer-title">Quick Links</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -211,7 +222,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h2 class="footer-title">Contact</h2>
           <ul class="footer-links">
             <li><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a></li>
             <li><a href="tel:+919011557131">+91 90115 57131</a></li>

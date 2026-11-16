@@ -22,11 +22,8 @@ function initDarkMode() {
   const toggle = document.querySelector('.theme-toggle');
   if (!toggle) return;
 
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+  // The inline script in each page's <head> has already set data-theme.
+  if (document.documentElement.getAttribute('data-theme') === 'dark') {
     toggle.innerHTML = '<i class="fas fa-sun"></i>';
   }
 
@@ -41,6 +38,7 @@ function initDarkMode() {
       localStorage.setItem('theme', 'dark');
       toggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
+    restyleCharts();
   });
 }
 
@@ -57,12 +55,14 @@ function initNavigation() {
   if (mobileBtn) {
     mobileBtn.addEventListener('click', () => {
       mobileBtn.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+      const open = navLinks.classList.toggle('active');
+      mobileBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileBtn.classList.remove('active');
+        mobileBtn.setAttribute('aria-expanded', 'false');
         navLinks.classList.remove('active');
         document.body.style.overflow = '';
       });
@@ -85,7 +85,6 @@ function initScrollAnimations() {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
         if (entry.target.querySelector('.metric-ring-fill')) animateDashboard(entry.target);
-        if (entry.target.querySelector('.skill-bar-fill')) animateSkillBars(entry.target);
         if (entry.target.querySelector('canvas')) initChartsInContainer(entry.target);
         observer.unobserve(entry.target);
       }
@@ -138,22 +137,17 @@ function animateDashboard(container) {
   });
 }
 
-/* ---- Skill Bars ---- */
-function animateSkillBars(container) {
-  container.querySelectorAll('.skill-bar-fill').forEach((bar, index) => {
-    const target = bar.getAttribute('data-width') || '0%';
-    setTimeout(() => { bar.style.width = target; }, index * 60);
-  });
-}
-
 /* ---- Modals ---- */
 function initModals() {
   document.querySelectorAll('[data-modal]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
+    // Inner links (e.g. map links) do their own thing and must not open the modal.
+    trigger.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
       const modalId = trigger.getAttribute('data-modal');
       openModal(modalId);
     });
     trigger.addEventListener('keydown', (e) => {
+      if (e.target.closest('a')) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openModal(trigger.getAttribute('data-modal'));
@@ -225,13 +219,14 @@ function initCommandPalette() {
   const currentPage = location.pathname.split('/').pop() || 'index.html';
 
   function go(page) {
-    if (page !== currentPage) window.location.href = page;
+    // Root-relative so the palette also works from 404 pages at nested paths.
+    if (page !== currentPage) window.location.href = '/' + page;
     closePalette();
   }
 
   function downloadCV() {
     const a = document.createElement('a');
-    a.href = 'Aditya_Abhyankar_CV.pdf';
+    a.href = '/Aditya_Abhyankar_CV.pdf';
     a.download = 'Aditya_Abhyankar_CV.pdf';
     document.body.appendChild(a);
     a.click();
@@ -338,7 +333,7 @@ let lastFocusedElement = null;
 
 function getFocusableElements(modal) {
   return Array.from(
-    modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
+    modal.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
   ).filter(el => !el.disabled && el.offsetParent !== null);
 }
 
@@ -388,6 +383,29 @@ function closeModal(id) {
 }
 
 /* ---- Charts (Chart.js) ---- */
+function chartColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    isDark,
+    textColor: isDark ? '#94a3b8' : '#475569',
+    gridColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
+  };
+}
+
+// Re-applies axis and legend colours to existing charts after a theme toggle.
+function restyleCharts() {
+  if (typeof Chart === 'undefined') return;
+  const { textColor, gridColor } = chartColors();
+  Object.values(Chart.instances).forEach((chart) => {
+    Object.values(chart.options.scales || {}).forEach((scale) => {
+      scale.ticks.color = textColor;
+      if (scale.grid.display !== false) scale.grid.color = gridColor;
+    });
+    chart.options.plugins.legend.labels.color = textColor;
+    chart.update('none');
+  });
+}
+
 function initCharts() {
   if (typeof Chart === 'undefined') return;
   document.querySelectorAll('.chart-container').forEach(container => {
@@ -405,9 +423,7 @@ function initChartsInContainer(container) {
   const data = JSON.parse(canvas.dataset.data || '[]');
   const label = canvas.dataset.label || 'Metric';
 
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const textColor = isDark ? '#94a3b8' : '#475569';
-  const gridColor = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+  const { textColor, gridColor } = chartColors();
 
   const ctx = canvas.getContext('2d');
 
@@ -464,11 +480,12 @@ function initGanttChart() {
   const presentIndex = monthIndex(today.getFullYear(), today.getMonth() + 1);
 
   const roles = [
-    { label: 'Project Planner (FABS / PepsiCo)', start: monthIndex(2025, 10), end: presentIndex, ongoing: true },
-    { label: 'Technical Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 7) },
-    { label: 'IT Service Desk Analyst (NHS)', start: monthIndex(2023, 5), end: monthIndex(2023, 7) },
-    { label: 'Project Manager – ERP (Gray Fox Consulting)', start: monthIndex(2022, 8), end: monthIndex(2023, 2) },
-    { label: 'Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 2), end: monthIndex(2023, 7) },
+    { label: 'Central Scheduler (FABS: Bisleri, Schaeffler)', start: monthIndex(2026, 10), end: presentIndex, ongoing: true },
+    { label: 'Project Engineer – Planning (FABS / PepsiCo)', start: monthIndex(2025, 10), end: monthIndex(2026, 10) },
+    { label: 'Technical and Commercial Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 6) },
+    { label: 'IT Support Analyst (NHS)', start: monthIndex(2023, 5), end: monthIndex(2023, 8) },
+    { label: 'Project Manager – ERP (Gray Fox Consulting)', start: monthIndex(2022, 9), end: monthIndex(2023, 2) },
+    { label: 'Senior Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 1), end: monthIndex(2023, 7) },
   ];
 
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -478,9 +495,7 @@ function initGanttChart() {
     return `${monthNames[month]} ${year}`;
   };
 
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const textColor = isDark ? '#94a3b8' : '#475569';
-  const gridColor = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+  const { isDark, textColor, gridColor } = chartColors();
   const barColor = isDark ? '#3b82f6' : '#004B93';
   const ongoingColor = isDark ? '#60a5fa' : '#0d9488';
 
@@ -540,6 +555,7 @@ function initContactForm() {
   const statusDiv = document.getElementById('formStatus');
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalBtnText = submitBtn.innerHTML;
+  let hideStatusTimer;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -569,7 +585,8 @@ function initContactForm() {
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
-      setTimeout(() => { statusDiv.style.display = 'none'; }, 5000);
+      clearTimeout(hideStatusTimer);
+      hideStatusTimer = setTimeout(() => { statusDiv.className = 'form-status'; }, 5000);
     }
   });
 }

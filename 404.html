@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the theme before CSS loads so dark-mode visitors get no light flash. -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+  <title>Page Not Found | Aditya Abhyankar</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/index.html" class="logo"><span class="logo-dot"></span> Aditya Abhyankar</a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/experience.html">Experience</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/skills.html">Competencies</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <a href="/contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main id="main">
+
+  <section class="hero" style="min-height: 70vh; padding-top: 100px;">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Error 404</span>
+        <h1>Page <span class="gradient-text">Not Found</span></h1>
+        <p class="hero-subtitle" style="max-width: 600px; margin: 0 auto 1.5rem;">
+          The page you are looking for does not exist or has moved.
+        </p>
+        <a href="/index.html" class="btn btn-primary"><i class="fas fa-house"></i> Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Aditya Abhyankar</div>
+          <p class="footer-desc">Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div>
+          <h2 class="footer-title">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/skills.html">Competencies</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Contact</h2>
+          <ul class="footer-links">
+            <li><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a></li>
+            <li><a href="tel:+919011557131">+91 90115 57131</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Pune,India" target="_blank" rel="noopener noreferrer" class="location-link">Pune, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aditya Abhyankar. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay command-palette-overlay" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="command-palette-label">
+    <div class="command-palette">
+      <div class="command-palette-input-row">
+        <i class="fas fa-search"></i>
+        <label id="command-palette-label" for="command-palette-input" class="sr-only">Search pages and actions</label>
+        <input type="text" id="command-palette-input" placeholder="Search pages, actions..." autocomplete="off" role="combobox" aria-expanded="true" aria-controls="command-palette-results" aria-autocomplete="list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="command-palette-results" id="command-palette-results" role="listbox"></ul>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

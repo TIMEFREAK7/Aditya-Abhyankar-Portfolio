@@ -1,11 +1,11 @@
 # Aditya Abhyankar: Professional Portfolio
 
-A five-page static portfolio built to showcase technical project management, engineering delivery, and CAPEX/industrial project experience in a recruiter-friendly format. Live at [aditya-abhyankar-portfolio-c3d9.vercel.app](https://aditya-abhyankar-portfolio-c3d9.vercel.app).
+A static portfolio built to showcase technical project management, engineering delivery, and CAPEX/industrial project experience in a recruiter-friendly format. Live at [aditya-abhyankar-portfolio-c3d9.vercel.app](https://aditya-abhyankar-portfolio-c3d9.vercel.app).
 
 ## Features
 
 - **Dark / light mode**: manual toggle, persisted via `localStorage`, defaults to the visitor's OS preference on first visit.
-- **Command palette (Ctrl/Cmd+K)**: fuzzy-searchable quick nav to any page plus actions (download CV, toggle theme, email, call, LinkedIn).
+- **Command palette (Ctrl/Cmd+K)**: searchable quick nav to any page plus actions (download CV, toggle theme, email, call, LinkedIn).
 - **Scroll-reveal animations**: IntersectionObserver-driven fade/slide-in for sections and cards, with staggered delays.
 - **Animated counters**: hero and "Portfolio at a Glance" stats count up when scrolled into view.
 - **Interactive dashboards**: Chart.js metric rings and charts on project cards, plus a custom Chart.js-based Gantt chart for the career timeline.
@@ -16,15 +16,16 @@ A five-page static portfolio built to showcase technical project management, eng
 - **SEO/sharing**: JSON-LD `Person` structured data, Open Graph/Twitter meta tags, canonical URLs, `robots.txt`, `sitemap.xml`, and favicons.
 - **Analytics**: Vercel Web Analytics.
 - **Print stylesheet**: a clean, ink-friendly layout when printed or saved as PDF.
-- **Downloadable CV**: a PDF resume kept in sync with the site's content.
+- **Downloadable CVs**: four PDF versions (Project Manager by default, plus Senior Planner, Project Controls and Project Planner), kept in sync with the site's content.
 
 ## Site Pages
 
 1. **Home** (`index.html`): introduction, hero stats, core competencies, key achievements, testimonials.
 2. **Experience** (`experience.html`): career Gantt chart plus a detailed timeline with click-to-expand modals.
 3. **Projects** (`projects.html`): filterable project dashboards with metrics, tags, and cumulative impact stats.
-4. **Competencies** (`skills.html`): categorized skills with animated progress bars.
-5. **Contact** (`contact.html`): contact form, direct contact details, and CV download.
+4. **Competencies** (`skills.html`): categorized skills, languages and achievements.
+5. **Contact** (`contact.html`): contact form, direct contact details, and CV downloads.
+6. **Case study** (`case-study.html`): defending a contractor delay claim, linked from Projects.
 
 ## File Structure
 
@@ -35,7 +36,11 @@ Aditya-Abhyankar-Portfolio/
 ├── projects.html              # Project dashboards, sector filter
 ├── skills.html                # Competencies page
 ├── contact.html               # Contact form and details
-├── Aditya_Abhyankar_CV.pdf    # Resume download (kept in sync with site content)
+├── case-study.html            # Case study: defending a delay claim
+├── 404.html                   # Not-found page (Vercel serves it automatically)
+├── vercel.json                # Security headers
+├── Aditya_Abhyankar_CV.pdf    # Default CV download (Project Manager version)
+├── Aditya_Abhyankar_CV_*.pdf  # Senior Planner, Project Controls and Project Planner versions
 ├── css/
 │   └── style.css              # Theme variables, layout, dark mode, animations, print styles
 ├── js/
@@ -84,6 +89,10 @@ Then open `http://localhost:8123/index.html`.
 - Edit contact details directly in `contact.html` (and the JSON-LD block near the top of each page, if changed).
 - Update theme colors and spacing via the CSS custom properties in `css/style.css` (`:root` and the `[data-theme="dark"]` override block).
 - The command palette's command list lives in `initCommandPalette()` in `js/main.js`.
+
+## Licence
+
+The MIT licence in `LICENSE` covers the code only (HTML, CSS and JavaScript). It does not cover the written content, photos, images or the CV PDFs.
 
 ---
 

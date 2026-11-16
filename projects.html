@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the theme before CSS loads so dark-mode visitors get no light flash. -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <title>Projects | Aditya Abhyankar - Interactive Dashboards</title>
   <meta name="description" content="Interactive project dashboards showcasing delivery metrics, budget performance, schedule adherence, and risk management outcomes.">
   <link rel="canonical" href="https://aditya-abhyankar-portfolio-c3d9.vercel.app/projects.html">
@@ -14,22 +16,24 @@
   <meta property="og:title" content="Projects | Aditya Abhyankar - Interactive Dashboards">
   <meta property="og:description" content="Interactive project dashboards showcasing delivery metrics, budget performance, schedule adherence, and risk management outcomes.">
   <meta property="og:url" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/projects.html">
-  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Projects | Aditya Abhyankar - Interactive Dashboards">
   <meta name="twitter:description" content="Interactive project dashboards showcasing delivery metrics, budget performance, schedule adherence, and risk management outcomes.">
-  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aditya Abhyankar",
-    "jobTitle": "Technical Project Manager & Mechanical Engineer",
+    "jobTitle": "Central Scheduler and Technical & Commercial Project Manager",
     "url": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/",
     "image": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg",
     "email": "mailto:Aditya.abhyankar22@gmail.com",
@@ -58,6 +62,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-dot"></span> Aditya Abhyankar</a>
@@ -73,9 +78,11 @@
         <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
         <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <main id="main">
 
   <section class="hero" style="min-height: 50vh; padding-top: 100px;">
     <div class="hero-bg"></div>
@@ -100,12 +107,13 @@
         <button class="filter-btn" data-filter="academic">Academic</button>
       </div>
 
+      <h2 class="sr-only">Projects</h2>
       <div class="projects-grid">
 
         <!-- Project 1: PepsiCo -->
         <div class="project-card reveal stagger-1" data-modal="modal-project-1" data-category="industrial" tabindex="0" role="button">
           <div class="project-img-wrapper">
-            <img src="images/1000103723.jpg" alt="PepsiCo Beverage Facility" class="project-img" width="1400" height="788" loading="lazy">
+            <img src="images/1000103726.jpg" alt="FABS logo" class="project-img img-logo" width="200" height="82" loading="lazy">
           </div>
           <div class="project-header">
             <h3 class="project-title"><i class="fas fa-industry"></i> PepsiCo Beverage Facility</h3>
@@ -165,10 +173,10 @@
             <canvas data-type="bar" data-labels='["Jan","Feb","Mar","Apr","May"]' data-data='[85,88,92,96,98]' data-label="Milestone Compliance %"></canvas>
           </div>
           <div class="project-tags">
-            <span class="tag">Primavera P6</span>
+            <span class="tag">Microsoft Project</span>
             <span class="tag">30+ Work Packages</span>
-            <span class="tag">200+ Activities</span>
-            <span class="tag">Live Production</span>
+            <span class="tag">1,500+ Activities</span>
+            <span class="tag">Greenfield to Live Production</span>
             <span class="tag">Sustainability</span>
           </div>
           <div style="padding:0 1.5rem 1rem;font-size:0.85rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for full project details</div>
@@ -177,7 +185,7 @@
         <!-- Project 2: Revolution-ZERO -->
         <div class="project-card reveal stagger-2" data-modal="modal-project-2" data-category="industrial" tabindex="0" role="button">
           <div class="project-img-wrapper">
-            <img src="images/1000103727.jpg" alt="Revolution-ZERO Sterilization Plant" class="project-img" width="850" height="481" loading="lazy">
+            <img src="images/1000103730.jpg" alt="Revolution-ZERO logo" class="project-img img-logo" width="200" height="46" loading="lazy">
           </div>
           <div class="project-header">
             <h3 class="project-title"><i class="fas fa-flask"></i> UK Sterilization Plants</h3>
@@ -241,7 +249,7 @@
         <!-- Project 3: ERP Implementation -->
         <div class="project-card reveal stagger-3" data-modal="modal-project-3" data-category="digital" tabindex="0" role="button">
           <div class="project-img-wrapper">
-            <img src="images/1000103767.jpg" alt="ERP Implementation - Gray Fox Consulting" class="project-img" width="591" height="229" loading="lazy">
+            <img src="images/1000103767.jpg" alt="ERP Implementation - Gray Fox Consulting" class="project-img img-logo" width="591" height="229" loading="lazy">
           </div>
           <div class="project-header">
             <h3 class="project-title"><i class="fas fa-laptop-code"></i> ERP Implementation</h3>
@@ -305,7 +313,7 @@
         <!-- Project 4: NHS Migration -->
         <div class="project-card reveal stagger-4" data-modal="modal-project-4" data-category="it-healthcare" tabindex="0" role="button">
           <div class="project-img-wrapper">
-            <img src="images/1000103724.jpg" alt="NHS Email Migration" class="project-img" width="225" height="225" loading="lazy">
+            <img src="images/1000103724.jpg" alt="NHS Email Migration" class="project-img img-logo" width="225" height="225" loading="lazy">
           </div>
           <div class="project-header">
             <h3 class="project-title"><i class="fas fa-hospital"></i> NHS Email Migration</h3>
@@ -369,7 +377,7 @@
         <!-- Project 5: AI Risk Management -->
         <div class="project-card reveal stagger-5" data-modal="modal-project-5" data-category="academic" tabindex="0" role="button">
           <div class="project-img-wrapper">
-            <img src="images/1000103728.jpg" alt="AI Risk Management Research" class="project-img" width="612" height="408" loading="lazy">
+            <img src="images/1000103722.jpg" alt="Northumbria University logo" class="project-img img-logo" width="200" height="63" loading="lazy">
           </div>
           <div class="project-header">
             <h3 class="project-title"><i class="fas fa-brain"></i> AI in Risk Management</h3>
@@ -421,11 +429,11 @@
             <canvas data-type="bar" data-labels='["Identification","Analysis","Mitigation","Monitoring"]' data-data='[72,68,65,70]' data-label="AI Feasibility Score"></canvas>
           </div>
           <div class="project-tags">
-            <span class="modal-tag">Artificial Intelligence</span>
-            <span class="modal-tag">Risk Management</span>
-            <span class="modal-tag">Quantitative Research</span>
-            <span class="modal-tag">Academic</span>
-            <span class="modal-tag">Northumbria University</span>
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Risk Management</span>
+            <span class="tag">Quantitative Research</span>
+            <span class="tag">Academic</span>
+            <span class="tag">Northumbria University</span>
           </div>
           <div style="padding:0 1.5rem 1rem;font-size:0.85rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for full project details</div>
         </div>
@@ -433,7 +441,7 @@
         <!-- Project 6: Diversity & Inclusion -->
         <div class="project-card reveal stagger-1" data-modal="modal-project-6" data-category="academic" tabindex="0" role="button">
           <div class="project-img-wrapper">
-            <img src="images/1000103731.jpg" alt="Diversity & Inclusion Initiatives" class="project-img" width="1200" height="300" loading="lazy">
+            <img src="images/1000103722.jpg" alt="Northumbria University logo" class="project-img img-logo" width="200" height="63" loading="lazy">
           </div>
           <div class="project-header">
             <h3 class="project-title"><i class="fas fa-users"></i> Diversity & Inclusion Initiatives</h3>
@@ -456,7 +464,7 @@
                   <circle class="metric-ring-bg" cx="35" cy="35" r="30"/>
                   <circle class="metric-ring-fill" cx="35" cy="35" r="30" data-target="100"/>
                 </svg>
-                <span class="metric-value">TEDx</span>
+                <span class="metric-value">TED</span>
               </div>
               <div class="metric-label">Event Organized</div>
             </div>
@@ -498,6 +506,18 @@
     </div>
   </section>
 
+  <!-- Case Study -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="card reveal text-center" style="max-width: 800px; margin: 0 auto; cursor: default;">
+        <span class="section-label">Case Study</span>
+        <h2 style="margin-bottom: 0.75rem;">Defending a Delay Claim</h2>
+        <p style="margin-bottom: 1.5rem;">How I answered two contractors&#39; delay claims when the schedules had not been updated for 18 months.</p>
+        <a href="case-study.html" class="btn btn-primary"><i class="fas fa-book-open"></i> Read the Case Study</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Summary Stats -->
   <section class="section section-dark">
     <div class="container">
@@ -514,10 +534,6 @@
           <div class="stat-number counter" data-target="3" data-prefix="£" data-suffix="M+">£0</div>
           <p>CAPEX Delivered (Revolution-ZERO)</p>
         </div>
-        <div class="card reveal stagger-3 text-center">
-          <div class="stat-number counter" data-target="6" data-suffix="">0</div>
-          <p>Major Projects Delivered</p>
-        </div>
         <div class="card reveal stagger-4 text-center">
           <div class="stat-number counter" data-target="25" data-suffix="">0</div>
           <p>Project Team Members Coordinated</p>
@@ -530,20 +546,22 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Aditya Abhyankar</div>
-          <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
+          <p class="footer-desc">Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Quick Links</h4>
+          <h2 class="footer-title">Quick Links</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -553,7 +571,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h2 class="footer-title">Contact</h2>
           <ul class="footer-links">
             <li><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a></li>
             <li><a href="tel:+919011557131">+91 90115 57131</a></li>
@@ -570,12 +588,13 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-project-1-title">PepsiCo Beverage Facility – Pune, India</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p><strong>Client:</strong> PepsiCo India Holdings Pvt. Ltd.<br><strong>Role:</strong> Project Planner / Planning Engineer<br><strong>Duration:</strong> October 2025 – Present<br><strong>Value:</strong> £150M Greenfield facility (supporting role)</p>
+        <p><strong>Client:</strong> PepsiCo India Holdings Pvt. Ltd.<br><strong>Role:</strong> Project Engineer – Planning (PMC), FABS<br><strong>Duration:</strong> October 2025 – October 2026<br><strong>Value:</strong> £150M greenfield facility (supporting role)</p>
         <h4>Project Overview</h4>
-        <p>Working on project planning and execution support for a major PepsiCo beverage manufacturing facility, contributing to the delivery of industrial works within a live production environment with a focus on programme control, site coordination, utility integration, and sustainability-driven infrastructure.</p>
+        <p>Project planning and execution support for a major PepsiCo beverage manufacturing facility that started as a greenfield build and moved into live production, with a focus on programme control, site coordination, utility integration, and sustainability-driven infrastructure.</p>
         <h4>Key Deliverables</h4>
         <ul>
-          <li>Developed and maintained 3-tier schedules (L1-L3) across 30+ work packages</li>
+          <li>Owned the integrated Microsoft Project programme (1,500+ activities)</li>
+          <li>Developed and maintained 4-tier schedules (L1-L4) across 30+ work packages</li>
           <li>Achieved 98% milestone compliance over 5 months</li>
           <li>Coordinated daily/weekly lookaheads with 20+ subcontractor teams</li>
           <li>Reduced workfront conflicts by 30%</li>
@@ -586,7 +605,7 @@
         </ul>
         <h4>Technologies</h4>
         <div class="modal-tags">
-          <span class="modal-tag">Primavera P6</span><span class="modal-tag">Microsoft Project</span><span class="modal-tag">AutoCAD</span>
+          <span class="modal-tag">Microsoft Project</span><span class="modal-tag">AutoCAD</span><span class="modal-tag">Delay Analysis</span>
           <span class="modal-tag">Document Control</span><span class="modal-tag">KPI Dashboards</span><span class="modal-tag">Sustainability</span>
         </div>
       </div>
@@ -597,7 +616,7 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-project-2-title">UK Sterilization Plants – Hampshire, UK</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p><strong>Company:</strong> Revolution-ZERO<br><strong>Role:</strong> Technical Project Manager<br><strong>Duration:</strong> November 2024 – May 2025<br><strong>Value:</strong> £3M+ CAPEX</p>
+        <p><strong>Company:</strong> Revolution-ZERO<br><strong>Role:</strong> Technical and Commercial Project Manager<br><strong>Duration:</strong> November 2024 – June 2025<br><strong>Value:</strong> £3M+ CAPEX</p>
         <h4>Project Overview</h4>
         <p>Led the end-to-end delivery of 2+ large-scale sterilization plant projects across the UK, overseeing technical coordination, regulatory compliance, and cross-functional team management in a technically sensitive operating environment.</p>
         <h4>Key Deliverables</h4>
@@ -622,7 +641,7 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-project-3-title">ERP Implementation – Newcastle, UK</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p><strong>Company:</strong> Gray Fox Consulting<br><strong>Role:</strong> Project Manager<br><strong>Duration:</strong> August 2022 – February 2023</p>
+        <p><strong>Company:</strong> Gray Fox Consulting (ERP transformation consultancy project)<br><strong>Role:</strong> Project Manager<br><strong>Duration:</strong> September 2022 – February 2023</p>
         <h4>Project Overview</h4>
         <p>Led business process analysis and ERP implementation planning, delivering structured recommendations that drove measurable efficiency improvements and cost savings for the client organization.</p>
         <h4>Key Deliverables</h4>
@@ -648,7 +667,7 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-project-4-title">NHS Email Migration – Newcastle, UK</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p><strong>Company:</strong> NHS Business Services Authority<br><strong>Role:</strong> IT Service Desk Analyst<br><strong>Duration:</strong> April 2023 – June 2023</p>
+        <p><strong>Company:</strong> NHS Business Services Authority<br><strong>Role:</strong> IT Support Analyst<br><strong>Duration:</strong> May 2023 – August 2023</p>
         <h4>Project Overview</h4>
         <p>Provided critical technical support during a large-scale email migration project, ensuring service continuity and high user satisfaction across enterprise systems in a high-pressure healthcare environment.</p>
         <h4>Key Deliverables</h4>
@@ -697,7 +716,7 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-project-6-title">Diversity & Inclusion Initiatives – Northumbria University</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p><strong>Institution:</strong> Northumbria University<br><strong>Role:</strong> Senior Student Inclusion Consultant<br><strong>Duration:</strong> February 2022 – July 2023</p>
+        <p><strong>Institution:</strong> Northumbria University<br><strong>Role:</strong> Senior Student Inclusion Consultant and Faculty Welfare Lead<br><strong>Duration:</strong> January 2022 – July 2023</p>
         <h4>Initiative Overview</h4>
         <p>Supported the development and implementation of Diversity & Inclusion initiatives across university programmes, improving student satisfaction outcomes and institutional engagement practices.</p>
         <h4>Key Achievements</h4>
@@ -711,7 +730,7 @@
         <h4>Recognition</h4>
         <div class="modal-tags">
           <span class="modal-tag">RAISE 2022</span><span class="modal-tag">Jisc Change Agent 2023</span>
-          <span class="modal-tag">TEDx Co-Organiser</span><span class="modal-tag">Student Satisfaction</span>
+          <span class="modal-tag">TED Talk Event Co-Organiser</span><span class="modal-tag">Student Satisfaction</span>
         </div>
       </div>
     </div>

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the theme before CSS loads so dark-mode visitors get no light flash. -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <title>Experience | Aditya Abhyankar - Project Manager & Engineer</title>
   <meta name="description" content="Professional experience spanning industrial construction, technical project management, ERP implementation, and IT service delivery across UK and India.">
   <link rel="canonical" href="https://aditya-abhyankar-portfolio-c3d9.vercel.app/experience.html">
@@ -14,22 +16,24 @@
   <meta property="og:title" content="Experience | Aditya Abhyankar - Project Manager & Engineer">
   <meta property="og:description" content="Professional experience spanning industrial construction, technical project management, ERP implementation, and IT service delivery across UK and India.">
   <meta property="og:url" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/experience.html">
-  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Experience | Aditya Abhyankar - Project Manager & Engineer">
   <meta name="twitter:description" content="Professional experience spanning industrial construction, technical project management, ERP implementation, and IT service delivery across UK and India.">
-  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aditya Abhyankar",
-    "jobTitle": "Technical Project Manager & Mechanical Engineer",
+    "jobTitle": "Central Scheduler and Technical & Commercial Project Manager",
     "url": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/",
     "image": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg",
     "email": "mailto:Aditya.abhyankar22@gmail.com",
@@ -58,6 +62,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-dot"></span> Aditya Abhyankar</a>
@@ -73,9 +78,11 @@
         <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
         <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <main id="main">
 
   <section class="hero" style="min-height: 50vh; padding-top: 100px;">
     <div class="hero-bg"></div>
@@ -95,7 +102,7 @@
       <div class="section-header reveal">
         <span class="section-label">At a Glance</span>
         <h2>Career Timeline</h2>
-        <p>Five roles, scheduled the way I schedule everything else. The full detail is below.</p>
+        <p>Six roles, scheduled the way I schedule everything else. The full detail is below.</p>
       </div>
       <div class="gantt-container reveal">
         <canvas id="career-gantt" role="img" aria-label="Gantt chart of career timeline. See the list below for the same roles and dates in text form."></canvas>
@@ -107,21 +114,40 @@
     <div class="container">
       <div class="timeline">
 
+        <!-- Job 0: FABS / Bisleri and Schaeffler -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content" data-modal="modal-job-0" tabindex="0" role="button">
+            <div class="timeline-logo"><img src="images/1000103726.jpg" alt="FABS Logo" width="200" height="82" loading="lazy"></div>
+            <span class="timeline-date">October 2026 – Present</span>
+            <h3 class="timeline-title">Central Scheduler (PMC)</h3>
+            <div class="timeline-company">Facilities And Building Solutions (FABS) – Clients: Bisleri International, Schaeffler</div>
+            <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=Pune,India" target="_blank" rel="noopener noreferrer" class="location-link">Pune, India</a></div>
+            <ul class="timeline-desc">
+              <li>Built and own the master schedule (200+ activities) for the Bisleri plant at Wargal, Hyderabad, from concept design and authority approvals through tendering, construction, commissioning and commercial production start.</li>
+              <li>Run the package schedules for the civil, structural and architectural works and the pre-engineered building, and hold each contractor's dates to the master.</li>
+              <li>Built and own the Microsoft Project schedules for three work fronts running in parallel inside Schaeffler's working factory at Savli: the Furnace Hall 2 upgrade, the furnace hall extension and the 66 kV substation, 200+ activities together.</li>
+              <li>Track drawing approvals, statutory liaison (load sanction, CEIG approval), order release and equipment lead times alongside site construction, testing and commissioning.</li>
+            </ul>
+            <div style="margin-top:1rem;font-size:0.85rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click to see full details</div>
+          </div>
+        </div>
+
         <!-- Job 1: FABS / PepsiCo -->
         <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
           <div class="timeline-content" data-modal="modal-job-1" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103726.jpg" alt="FABS Logo" width="200" height="82" loading="lazy"></div>
-            <img src="images/1000103723.jpg" alt="Industrial Manufacturing Facility" class="timeline-img" width="1400" height="788" loading="lazy">
-            <span class="timeline-date">October 2025 – Present</span>
-            <h3 class="timeline-title">Project Planner / Planning Engineer</h3>
+            <span class="timeline-date">October 2025 – October 2026</span>
+            <h3 class="timeline-title">Project Engineer – Planning (PMC)</h3>
             <div class="timeline-company">Facilities And Building Solutions (FABS) – Client: PepsiCo India Holdings Pvt. Ltd.</div>
             <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=Pune,India" target="_blank" rel="noopener noreferrer" class="location-link">Pune, India</a></div>
             <ul class="timeline-desc">
-              <li>Develop and maintain 3-tier schedules (L1-L3) across 30+ work packages, achieving 98% milestone compliance over 5 months.</li>
-              <li>Coordinate daily/weekly lookaheads with 20+ subcontractor teams, reducing workfront conflicts by 30%.</li>
-              <li>Track progress against baseline; identified 15+ float risks and escalated 4 critical delays, enabling recovery actions that saved ~3 weeks of potential slippage.</li>
-              <li>Prepare daily, weekly, and monthly progress reports for leadership and client reviews; reduced report generation time by 40% via standardized dashboards.</li>
+              <li>Owned the integrated Microsoft Project programme (1,500+ activities) for a £150M greenfield beverage plant that moved into live production, and reported weekly progress against the approved baseline to client and project leadership.</li>
+              <li>Developed and maintained 4-tier schedules (L1-L4) across 30+ work packages, achieving 98% milestone compliance over 5 months.</li>
+              <li>Coordinated daily/weekly lookaheads with 20+ subcontractor teams, reducing workfront conflicts by 30%.</li>
+              <li>Tracked progress against baseline; identified 15+ float risks and escalated 4 critical delays, enabling recovery actions that saved ~3 weeks of potential slippage.</li>
+              <li>Prepared daily, weekly, and monthly progress reports for leadership and client reviews; reduced report generation time by 40% via standardized dashboards.</li>
               <li>Implemented progress measurement system covering 200+ activities, improving schedule variance tracking to within ±5%.</li>
             </ul>
             <div style="margin-top:1rem;font-size:0.85rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click to see full details</div>
@@ -132,10 +158,9 @@
         <div class="timeline-item reveal-right">
           <div class="timeline-dot"></div>
           <div class="timeline-content" data-modal="modal-job-2" tabindex="0" role="button">
-            <div class="timeline-logo"><img src="images/1000103730.jpg" alt="Revolution-ZERO Logo" width="200" height="200" loading="lazy"></div>
-            <img src="images/1000103727.jpg" alt="Sterilization Plant Facility" class="timeline-img" width="850" height="481" loading="lazy">
-            <span class="timeline-date">November 2024 – May 2025</span>
-            <h3 class="timeline-title">Technical Project Manager</h3>
+            <div class="timeline-logo"><img src="images/revolution-zero-mark.jpg" alt="Revolution-ZERO Logo" width="47" height="46" loading="lazy"></div>
+            <span class="timeline-date">November 2024 – June 2025</span>
+            <h3 class="timeline-title">Technical and Commercial Project Manager</h3>
             <div class="timeline-company">Revolution-ZERO</div>
             <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=Four+Marks,Hampshire,UK" target="_blank" rel="noopener noreferrer" class="location-link">Four Marks, Hampshire, UK</a></div>
             <ul class="timeline-desc">
@@ -154,9 +179,8 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content" data-modal="modal-job-3" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103724.jpg" alt="NHS Logo" width="225" height="225" loading="lazy"></div>
-            <img src="images/1000103724.jpg" alt="Healthcare IT Environment" class="timeline-img" width="225" height="225" loading="lazy">
-            <span class="timeline-date">April 2023 – June 2023</span>
-            <h3 class="timeline-title">IT Service Desk Analyst</h3>
+            <span class="timeline-date">May 2023 – August 2023</span>
+            <h3 class="timeline-title">IT Support Analyst</h3>
             <div class="timeline-company">NHS Business Services Authority</div>
             <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=NHS+Business+Services+Authority,Newcastle+upon+Tyne,UK" target="_blank" rel="noopener noreferrer" class="location-link">Newcastle upon Tyne, UK</a></div>
             <ul class="timeline-desc">
@@ -174,10 +198,9 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content" data-modal="modal-job-4" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103767.jpg" alt="Gray Fox Consulting Logo" width="591" height="229" loading="lazy"></div>
-            <img src="images/1000103767.jpg" alt="ERP Implementation Dashboard" class="timeline-img" width="591" height="229" loading="lazy">
-            <span class="timeline-date">August 2022 – February 2023</span>
+            <span class="timeline-date">September 2022 – February 2023</span>
             <h3 class="timeline-title">Project Manager – ERP Implementation</h3>
-            <div class="timeline-company">Gray Fox Consulting</div>
+            <div class="timeline-company">Gray Fox Consulting (ERP transformation consultancy project)</div>
             <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=Gray+Fox+Consulting,Newcastle+upon+Tyne,UK" target="_blank" rel="noopener noreferrer" class="location-link">Newcastle upon Tyne, UK</a></div>
             <ul class="timeline-desc">
               <li>Led analysis of business processes and operational workflows to identify digital improvement opportunities through ERP implementation.</li>
@@ -194,9 +217,8 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content" data-modal="modal-job-5" tabindex="0" role="button">
             <div class="timeline-logo"><img src="images/1000103722.jpg" alt="Northumbria University Logo" width="200" height="63" loading="lazy"></div>
-            <img src="images/1000103732.jpg" alt="University Campus" class="timeline-img" width="600" height="400" loading="lazy">
-            <span class="timeline-date">February 2022 – July 2023</span>
-            <h3 class="timeline-title">Senior Student Inclusion Consultant</h3>
+            <span class="timeline-date">January 2022 – July 2023</span>
+            <h3 class="timeline-title">Senior Student Inclusion Consultant and Faculty Welfare Lead</h3>
             <div class="timeline-company">Northumbria University</div>
             <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=Northumbria+University,Newcastle+upon+Tyne,UK" target="_blank" rel="noopener noreferrer" class="location-link">Newcastle upon Tyne, UK</a></div>
             <ul class="timeline-desc">
@@ -228,20 +250,22 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Aditya Abhyankar</div>
-          <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
+          <p class="footer-desc">Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Quick Links</h4>
+          <h2 class="footer-title">Quick Links</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -251,7 +275,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h2 class="footer-title">Contact</h2>
           <ul class="footer-links">
             <li><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a></li>
             <li><a href="tel:+919011557131">+91 90115 57131</a></li>
@@ -264,35 +288,72 @@
   </footer>
 
   <!-- Job Detail Modals -->
-  <div class="modal-overlay" id="modal-job-1" role="dialog" aria-modal="true" aria-labelledby="modal-job-1-title">
+  <div class="modal-overlay" id="modal-job-0" role="dialog" aria-modal="true" aria-labelledby="modal-job-0-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 id="modal-job-1-title"><i class="fas fa-industry" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Planner / Planning Engineer</h3>
+        <h3 id="modal-job-0-title"><i class="fas fa-calendar-alt" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Central Scheduler (PMC)</h3>
         <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
-        <img src="images/1000103723.jpg" alt="PepsiCo Facility" width="1400" height="788" loading="lazy">
-        <p><strong>Company:</strong> Facilities And Building Solutions (FABS) – Client: PepsiCo India Holdings Pvt. Ltd.<br>
+        <p><strong>Company:</strong> Facilities And Building Solutions (FABS), project management consultant<br>
         <strong>Location:</strong> Pune, India<br>
-        <strong>Duration:</strong> October 2025 – Present</p>
-        <h4>Full Responsibilities</h4>
+        <strong>Duration:</strong> October 2026 – Present</p>
+        <h4>Bisleri International, Wargal, Hyderabad (plant project, concept design to commercial production)</h4>
         <ul>
-          <li>Develop and maintain 3-tier schedules (L1-L3) across 30+ work packages, achieving 98% milestone compliance over 5 months.</li>
-          <li>Coordinate daily/weekly lookaheads with 20+ subcontractor teams, reducing workfront conflicts by 30%.</li>
-          <li>Track progress against baseline; identified 15+ float risks and escalated 4 critical delays, enabling recovery actions that saved ~3 weeks of potential slippage.</li>
-          <li>Prepare daily, weekly, and monthly progress reports for leadership and client reviews; reduced report generation time by 40% via standardized dashboards.</li>
-          <li>Implemented progress measurement system covering 200+ activities, improving schedule variance tracking to within ±5%.</li>
-          <li>Managed document control for 300+ drawings/submittals; achieved 100% revision traceability and zero approval delays over 6 months.</li>
-          <li>Support alignment between site execution, technical deliverables, and client expectations in a high-compliance industrial environment.</li>
+          <li>Built the master project schedule (200+ activities) from the bid-stage BOQ and own it, covering concept design and authority approvals through tendering, construction, commissioning and commercial production start.</li>
+          <li>Run the package schedules for the civil, structural and architectural works and the pre-engineered building, and hold each contractor's dates to the master.</li>
+          <li>Run the tender event schedule for the equipment and utility packages (boilers, air compressors, HVAC and chillers among them), from enquiry and bid analysis to order date, so that lead times land equipment on site before installation starts.</li>
+        </ul>
+        <h4>Schaeffler, Savli factory upgrades</h4>
+        <ul>
+          <li>Built and own the Microsoft Project schedules for three work fronts running in parallel inside a working factory: the Furnace Hall 2 upgrade, the furnace hall extension and the 66 kV substation, 200+ activities together.</li>
+          <li>Report planned against actual percent complete on each front every cycle and flag the activities that threaten the finish date.</li>
+          <li>Track drawing approvals, statutory liaison (load sanction, CEIG approval), order release and equipment lead times alongside site construction, testing and commissioning.</li>
         </ul>
         <h4>Key Tools Used</h4>
         <div class="modal-tags">
-          <span class="modal-tag">Primavera P6</span>
+          <span class="modal-tag">Microsoft Project</span>
+          <span class="modal-tag">Master Scheduling</span>
+          <span class="modal-tag">Package Schedules</span>
+          <span class="modal-tag">Tender Event Schedules</span>
+          <span class="modal-tag">Statutory Approvals</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-job-1" role="dialog" aria-modal="true" aria-labelledby="modal-job-1-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-job-1-title"><i class="fas fa-industry" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Project Engineer – Planning (PMC)</h3>
+        <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Company:</strong> Facilities And Building Solutions (FABS) – Client: PepsiCo India Holdings Pvt. Ltd.<br>
+        <strong>Location:</strong> Pune, India<br>
+        <strong>Project:</strong> £150M greenfield beverage manufacturing plant that moved into live production<br>
+        <strong>Duration:</strong> October 2025 – October 2026</p>
+        <h4>Full Responsibilities</h4>
+        <ul>
+          <li>Owned the integrated Microsoft Project programme (1,500+ activities) and reported weekly progress against the approved baseline to client and project leadership.</li>
+          <li>Coordinated permitting, engineering, procurement, construction, commissioning and handover across 6 disciplines, 25 team members and 15 contractors.</li>
+          <li>Developed and maintained 4-tier schedules (L1-L4) across 30+ work packages, achieving 98% milestone compliance over 5 months.</li>
+          <li>Coordinated daily/weekly lookaheads with 20+ subcontractor teams, reducing workfront conflicts by 30%.</li>
+          <li>Tracked progress against baseline; identified 15+ float risks and escalated 4 critical delays, enabling recovery actions that saved ~3 weeks of potential slippage.</li>
+          <li>Prepared daily, weekly, and monthly progress reports for leadership and client reviews; reduced report generation time by 40% via standardized dashboards.</li>
+          <li>Implemented progress measurement system covering 200+ activities, improving schedule variance tracking to within ±5%.</li>
+          <li>Managed document control for 300+ drawings/submittals; achieved 100% revision traceability and zero approval delays over 6 months.</li>
+          <li>Built the delay documentation for the two main vendors: activity-level delay analysis across 960+ activities, a 90+ item correspondence log tracking commitments against actual dates, and the registers, briefs and management presentations used to contest their delay claims.</li>
+          <li>Supported alignment between site execution, technical deliverables, and client expectations in a high-compliance industrial environment.</li>
+        </ul>
+        <h4>Key Tools Used</h4>
+        <div class="modal-tags">
           <span class="modal-tag">Microsoft Project</span>
           <span class="modal-tag">AutoCAD</span>
           <span class="modal-tag">Document Control</span>
           <span class="modal-tag">KPI Dashboards</span>
-          <span class="modal-tag">Live Production</span>
+          <span class="modal-tag">Delay Analysis</span>
+          <span class="modal-tag">Greenfield to Live Production</span>
         </div>
       </div>
     </div>
@@ -301,14 +362,13 @@
   <div class="modal-overlay" id="modal-job-2" role="dialog" aria-modal="true" aria-labelledby="modal-job-2-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 id="modal-job-2-title"><i class="fas fa-flask" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Technical Project Manager</h3>
+        <h3 id="modal-job-2-title"><i class="fas fa-flask" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Technical and Commercial Project Manager</h3>
         <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
-        <img src="images/1000103733.jpg" alt="Sterilization Plant" width="1200" height="852" loading="lazy">
         <p><strong>Company:</strong> Revolution-ZERO<br>
         <strong>Location:</strong> Four Marks, Hampshire, UK<br>
-        <strong>Duration:</strong> November 2024 – May 2025</p>
+        <strong>Duration:</strong> November 2024 – June 2025</p>
         <h4>Full Responsibilities</h4>
         <ul>
           <li>Led the end-to-end delivery of 2+ large-scale sterilization plant projects across the UK, overseeing a combined CAPEX value of £3M+.</li>
@@ -337,14 +397,14 @@
   <div class="modal-overlay" id="modal-job-3" role="dialog" aria-modal="true" aria-labelledby="modal-job-3-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 id="modal-job-3-title"><i class="fas fa-hospital" style="color:var(--accent-primary);margin-right:0.5rem;"></i>IT Service Desk Analyst</h3>
+        <h3 id="modal-job-3-title"><i class="fas fa-hospital" style="color:var(--accent-primary);margin-right:0.5rem;"></i>IT Support Analyst</h3>
         <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
-        <img src="images/1000103724.jpg" alt="NHS" width="225" height="225" loading="lazy">
+        <img class="img-logo" src="images/1000103724.jpg" alt="NHS" width="225" height="225" loading="lazy">
         <p><strong>Company:</strong> NHS Business Services Authority<br>
         <strong>Location:</strong> Newcastle upon Tyne, UK<br>
-        <strong>Duration:</strong> April 2023 – June 2023</p>
+        <strong>Duration:</strong> May 2023 – August 2023</p>
         <h4>Full Responsibilities</h4>
         <ul>
           <li>Provided technical support during a large-scale email migration project, helping maintain a 95% issue resolution rate.</li>
@@ -371,10 +431,10 @@
         <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
-        <img src="images/1000103767.jpg" alt="ERP" width="591" height="229" loading="lazy">
-        <p><strong>Company:</strong> Gray Fox Consulting<br>
+        <img class="img-logo" src="images/1000103767.jpg" alt="ERP" width="591" height="229" loading="lazy">
+        <p><strong>Company:</strong> Gray Fox Consulting (ERP transformation consultancy project)<br>
         <strong>Location:</strong> Newcastle upon Tyne, UK<br>
-        <strong>Duration:</strong> August 2022 – February 2023</p>
+        <strong>Duration:</strong> September 2022 – February 2023</p>
         <h4>Full Responsibilities</h4>
         <ul>
           <li>Led analysis of business processes and operational workflows to identify digital improvement opportunities through ERP implementation.</li>
@@ -398,14 +458,13 @@
   <div class="modal-overlay" id="modal-job-5" role="dialog" aria-modal="true" aria-labelledby="modal-job-5-title">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 id="modal-job-5-title"><i class="fas fa-users" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Senior Student Inclusion Consultant</h3>
+        <h3 id="modal-job-5-title"><i class="fas fa-users" style="color:var(--accent-primary);margin-right:0.5rem;"></i>Senior Student Inclusion Consultant and Faculty Welfare Lead</h3>
         <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
-        <img src="images/1000103732.jpg" alt="University" width="600" height="400" loading="lazy">
         <p><strong>Company:</strong> Northumbria University<br>
         <strong>Location:</strong> Newcastle upon Tyne, UK<br>
-        <strong>Duration:</strong> February 2022 – July 2023</p>
+        <strong>Duration:</strong> January 2022 – July 2023</p>
         <h4>Full Responsibilities</h4>
         <ul>
           <li>Supported the development and implementation of Diversity & Inclusion initiatives across university programmes and stakeholder groups.</li>
@@ -419,7 +478,7 @@
         <div class="modal-tags">
           <span class="modal-tag">RAISE 2022 Presenter</span>
           <span class="modal-tag">Jisc Change Agent 2023</span>
-          <span class="modal-tag">TEDx Co-Organiser</span>
+          <span class="modal-tag">TED Talk Event Co-Organiser</span>
           <span class="modal-tag">Diversity & Inclusion</span>
         </div>
       </div>

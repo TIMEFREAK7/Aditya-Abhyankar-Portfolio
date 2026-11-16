@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the theme before CSS loads so dark-mode visitors get no light flash. -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <title>Competencies | Aditya Abhyankar - Skills & Expertise</title>
   <meta name="description" content="Comprehensive technical and professional competencies spanning project planning, engineering tools, construction coordination, and stakeholder management.">
   <link rel="canonical" href="https://aditya-abhyankar-portfolio-c3d9.vercel.app/skills.html">
@@ -14,11 +16,13 @@
   <meta property="og:title" content="Competencies | Aditya Abhyankar - Skills & Expertise">
   <meta property="og:description" content="Comprehensive technical and professional competencies spanning project planning, engineering tools, construction coordination, and stakeholder management.">
   <meta property="og:url" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/skills.html">
-  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Competencies | Aditya Abhyankar - Skills & Expertise">
   <meta name="twitter:description" content="Comprehensive technical and professional competencies spanning project planning, engineering tools, construction coordination, and stakeholder management.">
-  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aditya Abhyankar",
-    "jobTitle": "Technical Project Manager & Mechanical Engineer",
+    "jobTitle": "Central Scheduler and Technical & Commercial Project Manager",
     "url": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/",
     "image": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg",
     "email": "mailto:Aditya.abhyankar22@gmail.com",
@@ -57,6 +61,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo"><span class="logo-dot"></span> Aditya Abhyankar</a>
@@ -72,9 +77,11 @@
         <button class="palette-trigger" id="palette-trigger" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
         <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <main id="main">
 
   <section class="hero" style="min-height: 50vh; padding-top: 100px;">
     <div class="hero-bg"></div>
@@ -91,6 +98,7 @@
 
   <section class="section" style="padding-top: 0;">
     <div class="container">
+      <h2 class="sr-only">Competency Areas</h2>
       <div class="skills-categories">
 
         <div class="skills-category reveal">
@@ -102,12 +110,14 @@
             </div>
           </div>
           <div class="skills-list">
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Primavera P6</span><span class="skill-percent">95%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Microsoft Project / Planner</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">4-Tier Scheduling (L1-L4)</span><span class="skill-percent">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Progress Monitoring & KPI Tracking</span><span class="skill-percent">88%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Baseline Management & Variance Analysis</span><span class="skill-percent">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Risk Identification & Mitigation</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Primavera P6</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Microsoft Project / Planner</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Primavera P6 Resource Loading &amp; Cost Integration</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Earned Value Analysis</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">4-Tier Scheduling (L1-L4)</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Progress Monitoring & KPI Tracking</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Baseline Management & Variance Analysis</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Risk Identification & Mitigation</span></div></div>
           </div>
         </div>
 
@@ -120,12 +130,12 @@
             </div>
           </div>
           <div class="skills-list">
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Site Execution Support</span><span class="skill-percent">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Contractor & Subcontractor Coordination</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Utility Integration</span><span class="skill-percent">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">CAPEX Project Delivery</span><span class="skill-percent">95%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Document Control & Change Management</span><span class="skill-percent">95%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Live Production Environment Ops</span><span class="skill-percent">87%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="87%"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Site Execution Support</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Contractor & Subcontractor Coordination</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Utility Integration</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">CAPEX Project Delivery</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Document Control & Change Management</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Live Production Environment Ops</span></div></div>
           </div>
         </div>
 
@@ -138,12 +148,12 @@
             </div>
           </div>
           <div class="skills-list">
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">AutoCAD (2D Coordination / Drawing Review)</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">SolidWorks / Autodesk Inventor</span><span class="skill-percent">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="82%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Pro/ENGINEER (Creo)</span><span class="skill-percent">78%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="78%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">ANSYS (Simulation)</span><span class="skill-percent">75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="75%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Mastercam (CAM)</span><span class="skill-percent">72%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="72%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Mechanical Engineering Fundamentals</span><span class="skill-percent">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">AutoCAD (2D Coordination / Drawing Review)</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">SolidWorks / Autodesk Inventor</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Pro/ENGINEER (Creo)</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">ANSYS (Simulation)</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Mastercam (CAM)</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Mechanical Engineering Fundamentals</span></div></div>
           </div>
         </div>
 
@@ -156,12 +166,12 @@
             </div>
           </div>
           <div class="skills-list">
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Stakeholder Management</span><span class="skill-percent">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Agile / Waterfall / Hybrid Delivery</span><span class="skill-percent">88%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Jira / Asana / Monday.com / Trello</span><span class="skill-percent">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Microsoft Excel / PowerPoint / Word</span><span class="skill-percent">95%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Data Tracking & KPI Monitoring</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Resource Planning</span><span class="skill-percent">87%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="87%"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Stakeholder Management</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Agile / Waterfall / Hybrid Delivery</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Jira / Asana / Monday.com / Trello</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Microsoft Excel / PowerPoint / Word</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Data Tracking & KPI Monitoring</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Resource Planning</span></div></div>
           </div>
         </div>
 
@@ -174,10 +184,10 @@
             </div>
           </div>
           <div class="skills-list">
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">English</span><span class="skill-percent">Professional</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="100%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Marathi</span><span class="skill-percent">Native</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="100%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">Hindi</span><span class="skill-percent">Fluent</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div></div>
-            <div class="skill-item"><div class="skill-header"><span class="skill-name">German</span><span class="skill-percent">Conversational</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="60%"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">English</span><span class="skill-percent">Fluent, professional</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Marathi</span><span class="skill-percent">Native</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Hindi</span><span class="skill-percent">Fluent</span></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">German</span><span class="skill-percent">Basic</span></div></div>
           </div>
         </div>
 
@@ -189,46 +199,48 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Recognition</span>
-        <h2>Certifications & Achievements</h2>
+        <h2>Achievements</h2>
       </div>
       <div class="competencies-grid">
         <div class="card reveal stagger-1">
           <div class="card-icon"><i class="fas fa-award"></i></div>
-          <h4>Conference Presenter</h4>
+          <h3>Conference Presenter</h3>
           <p>Presented at RAISE (2022) and Jisc Change Agent Network (2023) conferences on student inclusion and digital transformation topics.</p>
         </div>
         <div class="card reveal stagger-2">
           <div class="card-icon"><i class="fas fa-microphone"></i></div>
-          <h4>TEDx Event Co-Organiser</h4>
+          <h3>TED Talk Event Co-Organiser</h3>
           <p>Co-organised a TED Talk event at Northumbria Students' Union, demonstrating event management and stakeholder engagement capabilities.</p>
         </div>
         <div class="card reveal stagger-3">
           <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h4>Advanced Practice Semester – Merit</h4>
+          <h3>Advanced Practice Semester – Merit</h3>
           <p>Completed Advanced Practice Semester with Merit at Northumbria University, showcasing applied project management excellence.</p>
         </div>
         <div class="card reveal stagger-4">
           <div class="card-icon"><i class="fas fa-star"></i></div>
-          <h4>Distinction in Mechanical Engineering</h4>
+          <h3>Distinction in Mechanical Engineering</h3>
           <p>Graduated with Distinction from Savitribai Phule Pune University, demonstrating strong academic and technical foundations.</p>
         </div>
       </div>
     </div>
   </section>
 
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Aditya Abhyankar</div>
-          <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
+          <p class="footer-desc">Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Quick Links</h4>
+          <h2 class="footer-title">Quick Links</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -238,7 +250,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h2 class="footer-title">Contact</h2>
           <ul class="footer-links">
             <li><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a></li>
             <li><a href="tel:+919011557131">+91 90115 57131</a></li>

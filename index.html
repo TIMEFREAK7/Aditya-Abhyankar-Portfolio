@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the theme before CSS loads so dark-mode visitors get no light flash. -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <title>Aditya Abhyankar | Project Manager & Mechanical Engineer</title>
-  <meta name="description" content="Mechanical Engineer and Technical Project Manager delivering industrial construction, manufacturing, and CAPEX projects across the UK and India, including a £150M PepsiCo greenfield facility.">
+  <meta name="description" content="Mechanical Engineer and Project Manager delivering industrial construction, manufacturing, and CAPEX projects across the UK and India, including a £150M PepsiCo greenfield facility.">
   <link rel="canonical" href="https://aditya-abhyankar-portfolio-c3d9.vercel.app/">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -12,13 +14,15 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Aditya Abhyankar Portfolio">
   <meta property="og:title" content="Aditya Abhyankar | Project Manager & Mechanical Engineer">
-  <meta property="og:description" content="Mechanical Engineer and Technical Project Manager delivering industrial construction, manufacturing, and CAPEX projects across the UK and India, including a £150M PepsiCo greenfield facility.">
+  <meta property="og:description" content="Mechanical Engineer and Project Manager delivering industrial construction, manufacturing, and CAPEX projects across the UK and India, including a £150M PepsiCo greenfield facility.">
   <meta property="og:url" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/">
-  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta property="og:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aditya Abhyankar | Project Manager & Mechanical Engineer">
-  <meta name="twitter:description" content="Mechanical Engineer and Technical Project Manager delivering industrial construction, manufacturing, and CAPEX projects across the UK and India, including a £150M PepsiCo greenfield facility.">
-  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg">
+  <meta name="twitter:description" content="Mechanical Engineer and Project Manager delivering industrial construction, manufacturing, and CAPEX projects across the UK and India, including a £150M PepsiCo greenfield facility.">
+  <meta name="twitter:image" content="https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aditya Abhyankar",
-    "jobTitle": "Technical Project Manager & Mechanical Engineer",
+    "jobTitle": "Central Scheduler and Technical & Commercial Project Manager",
     "url": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/",
     "image": "https://aditya-abhyankar-portfolio-c3d9.vercel.app/images/1000103738.jpg",
     "email": "mailto:Aditya.abhyankar22@gmail.com",
@@ -57,6 +61,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
@@ -79,11 +84,13 @@
           <i class="fas fa-moon"></i>
         </button>
       </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+
+  <main id="main">
 
   <section class="hero">
     <div class="hero-bg"></div>
@@ -95,7 +102,7 @@
           </div>
           <h1>Hi, I'm <span class="gradient-text">Aditya Abhyankar</span></h1>
           <p class="hero-subtitle">
-            Technical Project Manager & Mechanical Engineer delivering industrial, manufacturing, and CAPEX projects across the UK and India.
+            Project Manager & Mechanical Engineer delivering industrial, manufacturing, and CAPEX projects across the UK and India.
           </p>
           <div class="hero-stats">
             <div class="stat-item">
@@ -127,7 +134,7 @@
             </div>
             <div class="floating-badge badge-1">
               <div class="icon"><i class="fas fa-check-circle"></i></div>
-              <span>Microsoft Project Specialist</span>
+              <span>Primavera P6 &amp; MS Project</span>
             </div>
             <div class="floating-badge badge-2">
               <div class="icon"><i class="fas fa-award"></i></div>
@@ -149,32 +156,32 @@
       </div>
       <div class="competencies-grid">
         <div class="competency-card reveal stagger-1" data-modal="modal-planning" tabindex="0" role="button">
-          <h4><i class="fas fa-project-diagram" style="color: var(--accent-primary);"></i> Project Planning & Controls</h4>
-          <p>Primavera P6, Microsoft Project, 3-tier scheduling (L1-L3), progress monitoring, baseline tracking, and float risk identification across 30+ work packages.</p>
+          <h3><i class="fas fa-project-diagram" style="color: var(--accent-primary);"></i> Project Planning & Controls</h3>
+          <p>Central scheduling for live plant projects in Microsoft Project and Primavera P6: 4-tier schedules (L1-L4), baseline tracking, progress monitoring and float risk identification across 30+ work packages.</p>
           <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
         <div class="competency-card reveal stagger-2" data-modal="modal-construction" tabindex="0" role="button">
-          <h4><i class="fas fa-hard-hat" style="color: var(--accent-primary);"></i> Construction & Industrial Coordination</h4>
+          <h3><i class="fas fa-hard-hat" style="color: var(--accent-primary);"></i> Construction & Industrial Coordination</h3>
           <p>Site execution support, contractor coordination, utility integration, and live production environment management for CAPEX industrial projects.</p>
           <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
         <div class="competency-card reveal stagger-3" data-modal="modal-reporting" tabindex="0" role="button">
-          <h4><i class="fas fa-chart-line" style="color: var(--accent-primary);"></i> Reporting & Dashboarding</h4>
+          <h3><i class="fas fa-chart-line" style="color: var(--accent-primary);"></i> Reporting & Dashboarding</h3>
           <p>KPI tracking, standardized dashboards, daily/weekly/monthly progress reports, and document control with 100% revision traceability.</p>
           <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
         <div class="competency-card reveal stagger-4" data-modal="modal-risk" tabindex="0" role="button">
-          <h4><i class="fas fa-shield-alt" style="color: var(--accent-primary);"></i> Risk & Change Management</h4>
+          <h3><i class="fas fa-shield-alt" style="color: var(--accent-primary);"></i> Risk & Change Management</h3>
           <p>Proactive risk identification, mitigation strategy development, structured change management, and recovery planning that saved ~3 weeks of slippage.</p>
           <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
         <div class="competency-card reveal stagger-5" data-modal="modal-stakeholder" tabindex="0" role="button">
-          <h4><i class="fas fa-users" style="color: var(--accent-primary);"></i> Stakeholder & Team Leadership</h4>
+          <h3><i class="fas fa-users" style="color: var(--accent-primary);"></i> Stakeholder & Team Leadership</h3>
           <p>Cross-functional team coordination across 25 project team members and 15 contractors/subcontractors, client relationship management, and stakeholder communication in high-compliance environments.</p>
           <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
         <div class="competency-card reveal stagger-1" data-modal="modal-engineering" tabindex="0" role="button">
-          <h4><i class="fas fa-cogs" style="color: var(--accent-primary);"></i> Engineering & Technical Tools</h4>
+          <h3><i class="fas fa-cogs" style="color: var(--accent-primary);"></i> Engineering & Technical Tools</h3>
           <p>AutoCAD 2D coordination, mechanical engineering fundamentals, ERP implementation analysis, and technical documentation across multiple project phases.</p>
           <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--accent-primary);font-weight:600;"><i class="fas fa-hand-pointer"></i> Click for details</div>
         </div>
@@ -197,22 +204,22 @@
       <div class="competencies-grid">
         <div class="card reveal stagger-1" data-modal="modal-achievement-1" tabindex="0" role="button">
           <div class="card-icon"><i class="fas fa-trophy"></i></div>
-          <h4>£150M Programme, £3M+ Delivered</h4>
-          <p>Supporting planning and controls on a £150M PepsiCo Greenfield facility, and delivered £3M+ in CAPEX sterilization plant projects at Revolution-ZERO.</p>
+          <h3>£150M Programme, £3M+ Delivered</h3>
+          <p>Supported planning and controls on a £150M PepsiCo greenfield facility, and delivered £3M+ in CAPEX sterilization plant projects at Revolution-ZERO.</p>
         </div>
         <div class="card reveal stagger-2" data-modal="modal-achievement-2" tabindex="0" role="button">
           <div class="card-icon"><i class="fas fa-clock"></i></div>
-          <h4>98% Milestone Compliance</h4>
-          <p>Achieved 98% milestone compliance over 5 months at PepsiCo facility by developing and maintaining rigorous 3-tier schedules across 30+ work packages.</p>
+          <h3>98% Milestone Compliance</h3>
+          <p>Achieved 98% milestone compliance over 5 months at PepsiCo facility by developing and maintaining rigorous 4-tier schedules across 30+ work packages.</p>
         </div>
         <div class="card reveal stagger-3" data-modal="modal-achievement-3" tabindex="0" role="button">
           <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
-          <h4>40% Reporting Efficiency Gain</h4>
+          <h3>40% Reporting Efficiency Gain</h3>
           <p>Reduced report generation time by 40% through standardized dashboards and automated progress measurement systems covering 200+ activities.</p>
         </div>
         <div class="card reveal stagger-4" data-modal="modal-achievement-4" tabindex="0" role="button">
           <div class="card-icon"><i class="fas fa-leaf"></i></div>
-          <h4>Sustainability-Driven Delivery</h4>
+          <h3>Sustainability-Driven Delivery</h3>
           <p>Supported sustainability-driven infrastructure at PepsiCo and contributed to process improvements in sterilization plant projects across the UK.</p>
         </div>
       </div>
@@ -273,13 +280,13 @@
       <div class="competencies-grid">
         <div class="card reveal stagger-1" data-modal="modal-edu-msc" tabindex="0" role="button">
           <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h4>Master of Science (MSc), Project Management</h4>
+          <h3>Master of Science (MSc), Project Management</h3>
           <p>Northumbria University, Newcastle upon Tyne, UK (2021–2023)</p>
           <p style="margin-top: 0.5rem; font-size: 0.9375rem;">Graduated with 2:1 (Commendation) • Advanced Practice Semester with Merit • Dissertation: AI in Risk Management Practices (Score: 65)</p>
         </div>
         <div class="card reveal stagger-2" data-modal="modal-edu-be" tabindex="0" role="button">
           <div class="card-icon"><i class="fas fa-university"></i></div>
-          <h4>Bachelor of Engineering (B.E.), Mechanical Engineering</h4>
+          <h3>Bachelor of Engineering (B.E.), Mechanical Engineering</h3>
           <p>Savitribai Phule Pune University, Pune, India (2020)</p>
           <p style="margin-top: 0.5rem; font-size: 0.9375rem;">Graduated with Distinction • Strong foundation in mechanical design, manufacturing processes, and engineering principles.</p>
         </div>
@@ -307,20 +314,22 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Aditya Abhyankar</div>
-          <p class="footer-desc">Technical Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects with precision and leadership.</p>
+          <p class="footer-desc">Project Manager & Mechanical Engineer delivering complex industrial and infrastructure projects with precision and leadership.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/aditya-abhyankar-249370194" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:Aditya.abhyankar22@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Quick Links</h4>
+          <h2 class="footer-title">Quick Links</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -330,7 +339,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h2 class="footer-title">Contact</h2>
           <ul class="footer-links">
             <li><a href="mailto:Aditya.abhyankar22@gmail.com?subject=Contact from Portfolio">Aditya.abhyankar22@gmail.com</a></li>
             <li><a href="tel:+919011557131">+91 90115 57131</a></li>
@@ -355,15 +364,18 @@
         <p style="margin-bottom:1rem;">Deep expertise in enterprise-level project planning and controls across industrial and construction environments.</p>
         <h4>Key Capabilities</h4>
         <ul>
-          <li>Primavera P6 advanced scheduling with resource loading and cost integration</li>
+          <li>Central scheduling across live projects at once: master, package and tender event schedules for the Bisleri plant (200+ activities) and three parallel work fronts at Schaeffler (200+ activities together)</li>
+          <li>Microsoft Project programme ownership: the integrated 1,500+ activity programme on PepsiCo's £150M plant, reported weekly against the approved baseline</li>
+          <li>Project management: scope, schedule, budget, risk register and change control on £3M+ of manufacturing CAPEX, reported to senior leadership</li>
+          <li>Primavera P6 scheduling: WBS, dependencies, critical path and baselines</li>
           <li>Microsoft Project / Planner for agile and hybrid delivery models</li>
-          <li>3-tier scheduling architecture (L1 Master, L2 Summary, L3 Detailed)</li>
-          <li>Progress S-curve development and earned value analysis</li>
+          <li>4-tier scheduling architecture (L1 to L4)</li>
+          <li>Progress S-curve development</li>
           <li>Critical path analysis and float management</li>
           <li>Baseline maintenance and schedule variance reporting (±5% accuracy)</li>
           <li>Lookahead planning (daily/weekly) with subcontractor coordination</li>
         </ul>
-        <h4>Tools & Certifications</h4>
+        <h4>Tools</h4>
         <div class="modal-tags">
           <span class="modal-tag">Primavera P6</span>
           <span class="modal-tag">Microsoft Project</span>
@@ -533,15 +545,16 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-achievement-1-title">£150M Programme, £3M+ Delivered</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p>I'm currently supporting planning and project controls on a £150M programme, and previously delivered £3M+ in CAPEX projects directly. My portfolio spans:</p>
+        <p>I now run the schedules for the Bisleri plant and the Schaeffler factory upgrades as Central Scheduler. Before that I supported planning and project controls on a £150M programme for PepsiCo, and earlier delivered £3M+ in CAPEX projects directly. My portfolio spans:</p>
         <ul>
+          <li>Plant and factory upgrade schedules (Bisleri, Schaeffler)</li>
           <li>Industrial beverage manufacturing facilities (PepsiCo)</li>
           <li>Large-scale sterilization plant infrastructure (Revolution-ZERO, £3M+ CAPEX)</li>
           <li>ERP digital transformation programmes</li>
           <li>NHS enterprise IT migration projects</li>
           <li>University-wide diversity and inclusion strategic initiatives</li>
         </ul>
-        <p>My role has ranged from planning engineer and project coordinator to technical project manager, giving me end-to-end visibility across the project lifecycle.</p>
+        <p>My role has ranged from planning engineer and central scheduler to technical and commercial project manager, giving me end-to-end visibility across the project lifecycle.</p>
       </div>
     </div>
   </div>
@@ -550,7 +563,7 @@
     <div class="modal-content">
       <div class="modal-header"><h3 id="modal-achievement-2-title">98% Milestone Compliance</h3><button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button></div>
       <div class="modal-body">
-        <p>At the PepsiCo beverage manufacturing facility in Pune, India, I developed and maintained rigorous 3-tier schedules across 30+ work packages.</p>
+        <p>At the PepsiCo beverage manufacturing facility in Pune, India, I developed and maintained rigorous 4-tier schedules across 30+ work packages.</p>
         <ul>
           <li>Achieved 98% milestone compliance over a 5-month period</li>
           <li>Implemented progress measurement system covering 200+ activities</li>
