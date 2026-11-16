@@ -49,6 +49,7 @@ function initNavigation() {
   const navLinks = document.querySelector('.nav-links');
 
   window.addEventListener('scroll', () => {
+    if (document.body.style.position === 'fixed') return; // page is pinned behind an open popup
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 
@@ -354,11 +355,26 @@ function trapFocus(e) {
   }
 }
 
+// iOS Safari ignores overflow: hidden on <body>, so the page behind an open popup
+// still scrolled under the finger. Pinning the body in place locks it everywhere.
+let lockedScrollY = 0;
+
+function lockPageScroll() {
+  lockedScrollY = window.scrollY;
+  Object.assign(document.body.style, { position: 'fixed', top: `-${lockedScrollY}px`, left: '0', right: '0', overflow: 'hidden' });
+}
+
+function unlockPageScroll() {
+  Object.assign(document.body.style, { position: '', top: '', left: '', right: '', overflow: '' });
+  // 'instant' overrides the page's smooth scrolling, which would visibly scroll back from the top.
+  window.scrollTo({ top: lockedScrollY, behavior: 'instant' });
+}
+
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
     lastFocusedElement = document.activeElement;
-    document.body.style.overflow = 'hidden';
+    lockPageScroll();
     modal.classList.add('active');
     const content = modal.querySelector('.modal-content');
     if (content) {
@@ -366,17 +382,17 @@ function openModal(id) {
       content.style.overflowY = 'auto';
     }
     const closeBtn = modal.querySelector('.modal-close');
-    if (closeBtn) closeBtn.focus();
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
 }
 
 function closeModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
+  if (modal && modal.classList.contains('active')) {
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+    unlockPageScroll();
     if (lastFocusedElement) {
-      lastFocusedElement.focus();
+      lastFocusedElement.focus({ preventScroll: true });
       lastFocusedElement = null;
     }
   }
@@ -480,12 +496,12 @@ function initGanttChart() {
   const presentIndex = monthIndex(today.getFullYear(), today.getMonth() + 1);
 
   const roles = [
-    { label: 'Central Scheduler (FABS: Bisleri, Schaeffler)', start: monthIndex(2026, 10), end: presentIndex, ongoing: true },
-    { label: 'Project Engineer – Planning (FABS / PepsiCo)', start: monthIndex(2025, 10), end: monthIndex(2026, 10) },
-    { label: 'Technical and Commercial Project Manager (Revolution-ZERO)', start: monthIndex(2024, 11), end: monthIndex(2025, 6) },
-    { label: 'IT Support Analyst (NHS)', start: monthIndex(2023, 5), end: monthIndex(2023, 8) },
-    { label: 'Project Manager – ERP (Gray Fox Consulting)', start: monthIndex(2022, 9), end: monthIndex(2023, 2) },
-    { label: 'Senior Student Inclusion Consultant (Northumbria)', start: monthIndex(2022, 1), end: monthIndex(2023, 7) },
+    { label: 'Central Scheduler (FABS: Bisleri, Schaeffler)', short: 'FABS: Bisleri, Schaeffler', start: monthIndex(2026, 10), end: presentIndex, ongoing: true },
+    { label: 'Project Engineer – Planning (FABS / PepsiCo)', short: 'FABS: PepsiCo', start: monthIndex(2025, 10), end: monthIndex(2026, 10) },
+    { label: 'Technical and Commercial Project Manager (Revolution-ZERO)', short: 'Revolution-ZERO', start: monthIndex(2024, 11), end: monthIndex(2025, 6) },
+    { label: 'IT Support Analyst (NHS)', short: 'NHS', start: monthIndex(2023, 5), end: monthIndex(2023, 8) },
+    { label: 'Project Manager – ERP (Gray Fox Consulting)', short: 'Gray Fox', start: monthIndex(2022, 9), end: monthIndex(2023, 2) },
+    { label: 'Senior Student Inclusion Consultant (Northumbria)', short: 'Northumbria', start: monthIndex(2022, 1), end: monthIndex(2023, 7) },
   ];
 
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -518,6 +534,7 @@ function initGanttChart() {
         legend: { display: false },
         tooltip: {
           callbacks: {
+            title: (items) => roles[items[0].dataIndex].label,
             label: (ctx) => {
               const role = roles[ctx.dataIndex];
               const endLabel = role.ongoing ? 'Present' : formatMonthIndex(role.end);
@@ -540,7 +557,8 @@ function initGanttChart() {
         },
         y: {
           grid: { display: false },
-          ticks: { color: textColor, font: { size: 11 } },
+          // Full titles do not fit beside the bars on a phone; show the employer there.
+          ticks: { color: textColor, font: { size: 11 }, callback: function (value) { return this.chart.width < 600 ? roles[value].short : roles[value].label; } },
         },
       },
     },
